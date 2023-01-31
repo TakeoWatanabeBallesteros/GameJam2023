@@ -16,8 +16,12 @@ public class GetWind : MonoBehaviour
 
     [SerializeField] GameObject textPrefab;
 
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] CircleCollider2D circleCollider;
+
     int totalHits;
     int hits;
+    [SerializeField] float regenerateTime;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +45,6 @@ public class GetWind : MonoBehaviour
 
             yield return new WaitForSeconds(timePerHit);
 
-            Debug.Log(itemPerHit);
             playerItemsScript.ChangeWindItems(itemPerHit);
 
             GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
@@ -49,9 +52,17 @@ public class GetWind : MonoBehaviour
 
             Instantiate(itemPrefab, transform.position, Quaternion.identity);
             hits++;
-
+            totalHits = Random.Range(minHits, maxHits);
         }
-        Destroy(gameObject);
+        hits = 0;
+        StartCoroutine(regenerateItem());
+    }
+    IEnumerator regenerateItem()
+    {
+        spriteRenderer.enabled = false;
+        circleCollider.enabled = false;
+        yield return new WaitForSeconds(regenerateTime);
+        spriteRenderer.enabled = true;
+        circleCollider.enabled = true;
     }
 }
-

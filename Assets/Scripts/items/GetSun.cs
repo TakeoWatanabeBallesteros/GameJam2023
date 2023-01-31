@@ -16,8 +16,12 @@ public class GetSun : MonoBehaviour
 
     [SerializeField] GameObject textPrefab;
 
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] CircleCollider2D circleCollider;
+
     int totalHits;
     int hits;
+    [SerializeField] float regenerateTime;
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +52,17 @@ public class GetSun : MonoBehaviour
 
             Instantiate(itemPrefab, transform.position, Quaternion.identity);
             hits++;
-
+            totalHits = Random.Range(minHits, maxHits);
         }
-        Destroy(gameObject);
+        hits = 0;
+        StartCoroutine(regenerateItem());
+    }
+    IEnumerator regenerateItem()
+    {
+        spriteRenderer.enabled = false;
+        circleCollider.enabled = false;
+        yield return new WaitForSeconds(regenerateTime);
+        spriteRenderer.enabled = true;
+        circleCollider.enabled = true;
     }
 }
