@@ -41,7 +41,6 @@ public class GetSun : MonoBehaviour
 
             yield return new WaitForSeconds(timePerHit);
 
-            Debug.Log(itemPerHit);
             playerItemsScript.ChangeSunItems(itemPerHit);
 
             GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);

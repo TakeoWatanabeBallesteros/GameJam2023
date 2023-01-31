@@ -14,6 +14,9 @@ public class GetCaca : MonoBehaviour
     [SerializeField] float maxTimePerHit;
     [SerializeField] float minTimePerHit;
 
+    [SerializeField] float regenerateTime;
+    [SerializeField] RegenerateItems regenerateScript;
+
     [SerializeField] GameObject textPrefab;
 
     int totalHits;
@@ -41,7 +44,6 @@ public class GetCaca : MonoBehaviour
 
             yield return new WaitForSeconds(timePerHit);
 
-            Debug.Log(itemPerHit);
             playerItemsScript.ChangeCacaItems(itemPerHit);
 
             GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
@@ -51,6 +53,7 @@ public class GetCaca : MonoBehaviour
             hits++;
 
         }
+        regenerateScript.regenerate(gameObject, transform.position, transform.rotation, regenerateTime);
         Destroy(gameObject);
     }
 }
