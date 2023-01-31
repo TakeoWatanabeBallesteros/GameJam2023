@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GetCaca : MonoBehaviour
 {
     [SerializeField] GameObject itemPrefab;
@@ -13,6 +13,8 @@ public class GetCaca : MonoBehaviour
     [SerializeField] int minHits;
     [SerializeField] float maxTimePerHit;
     [SerializeField] float minTimePerHit;
+
+    [SerializeField] GameObject textPrefab;
 
     int totalHits;
     int hits;
@@ -40,7 +42,10 @@ public class GetCaca : MonoBehaviour
             yield return new WaitForSeconds(timePerHit);
 
             Debug.Log(itemPerHit);
-            playerItemsScript.cacaItems += itemPerHit;
+            playerItemsScript.ChangeCacaItems(itemPerHit);
+
+            GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+            popUpText.GetComponentInChildren<TextMeshPro>().text = "+" + itemPerHit.ToString();
 
             Instantiate(itemPrefab, transform.position, Quaternion.identity);
             hits++;

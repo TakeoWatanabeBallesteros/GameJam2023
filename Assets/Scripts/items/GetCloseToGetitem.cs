@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class GetCloseToGetitem : MonoBehaviour
 {
-    [SerializeField] GetCaca getCacaScript;
-    [SerializeField] GetSun  getSunScript;
-    [SerializeField] GetWater getWaterScript;
-    [SerializeField] GetWind getWindScript;
-
     IEnumerator cacaCoroutine;
     IEnumerator waterCoroutine;
     IEnumerator windCoroutine;
@@ -26,43 +21,44 @@ public class GetCloseToGetitem : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (getCacaScript == GetComponent<GetCaca>())
+        if (GetComponent<GetCaca>() != null)
         {
-            cacaCoroutine = getCacaScript.GetItemCaca();
+            cacaCoroutine = GetComponent<GetCaca>().GetItemCaca();
             StartCoroutine(cacaCoroutine);
         }
-        else if (getWaterScript == GetComponent<GetWater>())
+        else if (GetComponent<GetWater>() != null)
         {
-            Debug.Log("cacaasds");
+            waterCoroutine = GetComponent<GetWater>().GetItemWater();
+            StartCoroutine(waterCoroutine);
         }
-        else if (getWindScript == GetComponent<GetWind>())
+        else if (GetComponent<GetWind>() != null)
         {
-
-            Debug.Log("na");
+            windCoroutine = GetComponent<GetWind>().GetItemWind();
+            StartCoroutine(windCoroutine);
         }
-        else if (getSunScript == GetComponent<GetSun>())
+        else if (GetComponent<GetSun>() != null)
         {
-            Debug.Log("nanananananna");
+            sunCoroutine = GetComponent<GetSun>().GetItemSun();
+            StartCoroutine(sunCoroutine);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (getCacaScript == GetComponent<GetCaca>())
+        if (GetComponent<GetCaca>() != null)
         {
             StopCoroutine(cacaCoroutine);
         }
-        else if (getWaterScript == GetComponent<GetWater>())
+        else if (GetComponent<GetWater>() != null)
         {
-            Debug.Log("cacaasds");
+            StopCoroutine(waterCoroutine);
         }
-        else if (getWindScript == GetComponent<GetWind>())
+        else if (GetComponent<GetWind>() != null)
         {
-
-            Debug.Log("na");
+            StopCoroutine(windCoroutine);
         }
-        else if (getSunScript == GetComponent<GetSun>())
+        else if (GetComponent<GetSun>() != null)
         {
-            Debug.Log("nanananananna");
+            StopCoroutine(sunCoroutine);
         }
     }
 }

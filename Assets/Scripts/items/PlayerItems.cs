@@ -1,22 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerItems : MonoBehaviour
 {
-    public int sunItems;
-    public int windItems;
-    public int cacaItems;
-    public int waterItems;
-    // Start is called before the first frame update
-    void Start()
+    public int sunItems = 0;
+    public int windItems = 0;
+    public int cacaItems = 0;
+    public int waterItems = 0;
+
+    [SerializeField] TextMeshProUGUI sunText;
+    [SerializeField] TextMeshProUGUI windText;
+    [SerializeField] TextMeshProUGUI cacaText;
+    [SerializeField] TextMeshProUGUI waterText;
+
+    public void ChangeSunItems(int valor)
     {
-        
+        sunItems += valor;
+        sunText.text = sunItems.ToString();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ChangeWindItems(int valor)
     {
-
+        windItems += valor;
+        windText.text = windItems.ToString();
+    }
+    public void ChangeWaterItems(int valor)
+    {
+        waterItems += valor;
+        waterText.text = waterItems.ToString();
+    }
+    public void ChangeCacaItems(int valor)
+    {
+        cacaItems += valor;
+        cacaText.text = cacaItems.ToString();
     }
 }

@@ -10,7 +10,7 @@ public class moveItemToPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = Time.time + 1;
+        timer = Time.time + .5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         startPos = transform.position;
     }

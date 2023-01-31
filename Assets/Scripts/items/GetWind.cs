@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GetWind : MonoBehaviour
 {
     [SerializeField] GameObject itemPrefab;
@@ -13,10 +13,17 @@ public class GetWind : MonoBehaviour
     [SerializeField] int minHits;
     [SerializeField] float maxTimePerHit;
     [SerializeField] float minTimePerHit;
+
+    [SerializeField] GameObject textPrefab;
+
+    int totalHits;
+    int hits;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        totalHits = Random.Range(minHits, maxHits);
+        hits = 0;
     }
 
     // Update is called once per frame
@@ -25,22 +32,26 @@ public class GetWind : MonoBehaviour
 
     }
 
-    IEnumerator GetItemWind()
+    public IEnumerator GetItemWind()
     {
-        int hits = Random.Range(minHits, maxHits);
-
-        for (int i = 0; i <= hits; i++)
+        for (int i = hits; i <= totalHits; i++)
         {
             int itemPerHit = Random.Range(minItemGetPerHit, maxItemGetPerHit);
             float timePerHit = Random.Range(minTimePerHit, maxTimePerHit);
 
             yield return new WaitForSeconds(timePerHit);
 
-            playerItemsScript.windItems = itemPerHit;
+            Debug.Log(itemPerHit);
+            playerItemsScript.ChangeWindItems(itemPerHit);
 
-            GameObject itemToPlayer = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+            GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+            popUpText.GetComponentInChildren<TextMeshPro>().text = "+" + itemPerHit.ToString();
 
+            Instantiate(itemPrefab, transform.position, Quaternion.identity);
+            hits++;
 
         }
+        Destroy(gameObject);
     }
 }
+
