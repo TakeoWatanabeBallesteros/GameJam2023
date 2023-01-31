@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: provamat
+  m_Name: matBarraProgression
   m_Shader: {fileID: -6465566751694194690, guid: 25bed21ea12eba64aaece9ae75888486, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -58,7 +58,7 @@ Material:
     - _QueueOffset: 0
     - _Scale: 1
     - _alphaClip: 0
-    - _clip: 0.895
+    - _clip: 0.027
     - _grow: 1
     - _metalic: 0
     - _scale: 0
