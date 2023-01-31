@@ -15,9 +15,11 @@ public class GetCaca : MonoBehaviour
     [SerializeField] float minTimePerHit;
 
     [SerializeField] float regenerateTime;
-    [SerializeField] RegenerateItems regenerateScript;
 
     [SerializeField] GameObject textPrefab;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] CircleCollider2D circleCollider;
 
     int totalHits;
     int hits;
@@ -51,9 +53,18 @@ public class GetCaca : MonoBehaviour
 
             Instantiate(itemPrefab, transform.position, Quaternion.identity);
             hits++;
-
+            totalHits = Random.Range(minHits, maxHits);
         }
-        regenerateScript.regenerate(gameObject, transform.position, transform.rotation, regenerateTime);
-        Destroy(gameObject);
+        hits = 0;
+        StartCoroutine(regenerateItem());
     }
+    IEnumerator regenerateItem()
+    {
+        spriteRenderer.enabled = false;
+        circleCollider.enabled = false;
+        yield return new WaitForSeconds(regenerateTime);
+        spriteRenderer.enabled = true;
+        circleCollider.enabled = true;
+    }
+
 }
