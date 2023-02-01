@@ -13,6 +13,8 @@ public class MoveSolLluna : MonoBehaviour
     [SerializeField] Sprite moonSprite;
     SpriteRenderer spriteRenderer;
     Transform parentObject;
+
+    public GameObject Drop;
     // Start is called before the first frame update
     void Start()
     {
