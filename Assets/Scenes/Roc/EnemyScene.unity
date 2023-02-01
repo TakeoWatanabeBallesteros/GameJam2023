@@ -154,6 +154,24 @@ Transform:
   m_Father: {fileID: 574792786}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &510813144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2143226266467477718, guid: 8ab6e514a48f045428b414c922d037b7, type: 3}
+  m_PrefabInstance: {fileID: 1351305481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &510813150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510813144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032fb3b84ac5f3341b5f0de773da6579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deterioreTime: 2
 --- !u!1 &574792785
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +226,7 @@ MonoBehaviour:
   - {fileID: 432575020}
   - {fileID: 773835670}
   - {fileID: 979850696}
+  - {fileID: 602613564}
   EnemyPrefab: {fileID: 2877350557288150248, guid: 5f851d40ed52421419646c5f6b9405fa, type: 3}
   planetHeight: 2.28
   planetTreeName: tree1
@@ -402,11 +421,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2143226266467456808, guid: 8ab6e514a48f045428b414c922d037b7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.5387206
+      value: 4.7554345
       objectReference: {fileID: 0}
     - target: {fileID: 2143226266467456808, guid: 8ab6e514a48f045428b414c922d037b7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.4224744
+      value: 3.797048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143226266467456808, guid: 8ab6e514a48f045428b414c922d037b7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.0003815
       objectReference: {fileID: 0}
     - target: {fileID: 2143226266467456808, guid: 8ab6e514a48f045428b414c922d037b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -414,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2143226266467456808, guid: 8ab6e514a48f045428b414c922d037b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6179
+      value: 3.34
       objectReference: {fileID: 0}
     - target: {fileID: 2143226266467456808, guid: 8ab6e514a48f045428b414c922d037b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -623,6 +646,10 @@ PrefabInstance:
     - target: {fileID: 2828095492106616470, guid: 593efc87d5578e445899cf10b8bfe7b2, type: 3}
       propertyPath: m_Name
       value: TreeEnemyController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828095492106616470, guid: 593efc87d5578e445899cf10b8bfe7b2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2828095492106616471, guid: 593efc87d5578e445899cf10b8bfe7b2, type: 3}
       propertyPath: m_RootOrder

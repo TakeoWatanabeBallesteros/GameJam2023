@@ -12,16 +12,25 @@ public class FleeState : MonoBehaviour,State
         }
     }
 
-   
+    bool isOnTree = true;
+    Vector3 groundPos;
+    [SerializeField] float runVelocity;
 
     void State.OnEnter()
     {
-
+        groundPos = GetComponent<AppearState>().finalGroundPos;
     }
 
     void State.OnUpdate()
     {
-       
+        if (isOnTree)
+        {
+            transform.position = Vector3.Lerp(transform.position, groundPos, runVelocity * Time.deltaTime);
+        }
+        else
+        {
+
+        }
     }
 
     void State.OnExit()
