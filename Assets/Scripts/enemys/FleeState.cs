@@ -23,7 +23,6 @@ public class FleeState : MonoBehaviour,State
         groundPos = GetComponent<AppearState>().finalGroundPos;
         Debug.Log(groundPos);
         enemyParent = transform.parent;
-        isOnTree = true;
     }
 
     void State.OnUpdate()
@@ -55,5 +54,9 @@ public class FleeState : MonoBehaviour,State
     public void OnTrigger(Collider2D collision)
     {
 
+    }
+    public void SetIsOnTree(bool isTree)
+    {
+        isOnTree = isTree;
     }
 }

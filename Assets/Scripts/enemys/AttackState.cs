@@ -49,7 +49,8 @@ public class AttackState : MonoBehaviour,State
     {
         if(collision.tag == "Player")
         {
-            fsm.ChangeState<FleeState>();
+            GetComponent<FleeState>().SetIsOnTree(true);
+            fsm.ChangeState<FleeState>();           
         }
     }
 }

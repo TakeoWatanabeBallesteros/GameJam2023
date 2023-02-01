@@ -67,7 +67,8 @@ public class AppearState : MonoBehaviour,State
     {
         if (collision.tag == "Player")
         {
-            fsm.ChangeState<FleeState>();
+            GetComponent<FleeState>().SetIsOnTree(false);
+            fsm.ChangeState<FleeState>();         
         }
     }
 }
