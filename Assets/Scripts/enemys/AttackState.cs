@@ -11,29 +11,40 @@ public class AttackState : MonoBehaviour,State
             return GetComponent<FSM>();
         }
     }
-    [SerializeField] SpriteRenderer treeSprite;
+    deterioreTree tree;
     float timer;
     [SerializeField] float timeToAttack;
+    [SerializeField] float damageToTree;
 
     private void Awake()
     {
-        treeSprite = GameObject.FindGameObjectWithTag("tree1").GetComponent<SpriteRenderer>();
+        tree = GameObject.FindGameObjectWithTag("tree1").GetComponent<deterioreTree>();
     }
 
     void State.OnEnter()
     {
-        Debug.Log("done");
         timer = Time.time + timeToAttack;
     }
 
 
     void State.OnUpdate()
     {
-        
         if(Time.time > timer)
         {
-            Debug.Log(treeSprite);
-            treeSprite.material.SetFloat("Grow", 0); 
+            Debug.Log(tree);
+            timer = Time.time + timeToAttack;
+            tree.DamageTree(damageToTree);
+        }
+    }
+    public void PlayerIsClose()
+    {
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            fsm.ChangeState<FleeState>();
         }
     }
 

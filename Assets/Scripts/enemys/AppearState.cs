@@ -22,12 +22,14 @@ public class AppearState : MonoBehaviour,State
     [SerializeField] Vector3 treeEnemyAttackPosRandom2;
 
     Vector3 enemyAttackPos;
+    public Vector3 startPos;
     public Vector3 finalGroundPos;
 
     private void Awake()
     {
         enemyParent = transform.parent.gameObject;
         canMove = false;
+        startPos = transform.position;
     }
 
     void State.OnEnter()
