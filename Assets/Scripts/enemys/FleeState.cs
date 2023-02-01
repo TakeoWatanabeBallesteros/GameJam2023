@@ -37,4 +37,8 @@ public class FleeState : MonoBehaviour,State
     {
 
     }
+    public void OnTrigger(Collider2D collision)
+    {
+
+    }
 }

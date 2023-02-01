@@ -40,16 +40,13 @@ public class AttackState : MonoBehaviour,State
     {
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Player")
-        {
-            fsm.ChangeState<FleeState>();
-        }
-    }
 
     void State.OnExit()
     {
 
+    }
+    public void OnTrigger(Collider2D collision)
+    {
+        Debug.Log("lola lolita");
     }
 }

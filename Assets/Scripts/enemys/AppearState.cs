@@ -68,4 +68,8 @@ public class AppearState : MonoBehaviour,State
     {
 
     }
+    public void OnTrigger(Collider2D collision)
+    {
+
+    }
 }

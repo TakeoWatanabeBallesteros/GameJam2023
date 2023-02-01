@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe90862c423a2074eb550641b070b700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runVelocity: 0
 --- !u!114 &2845365710905188619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +145,7 @@ MonoBehaviour:
   enemySpeedTree: 1
   treeEnemyAttackPosRandom1: {x: -0.3, y: 2.2, z: 0}
   treeEnemyAttackPosRandom2: {x: 0.3, y: 2.9, z: 0}
+  startPos: {x: 0, y: 0, z: 0}
   finalGroundPos: {x: 0, y: 0, z: 0}
 --- !u!61 &6596557217880338824
 BoxCollider2D:
@@ -155,7 +157,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.026057482, y: -0.05042541}

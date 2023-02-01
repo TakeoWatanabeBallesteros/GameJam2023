@@ -30,6 +30,11 @@ public class FSM : MonoBehaviour
         currentState = GetState<T>();
         currentState.OnEnter();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("soi");
+        currentState.OnTrigger(collision);
+    }
 
     State GetState<T>() where T : Component
     {
