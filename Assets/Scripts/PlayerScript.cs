@@ -32,5 +32,15 @@ public class PlayerScript : MonoBehaviour
     private void OnRootMovement()
     {
         rb.velocity = new Vector2(0, Input.GetAxisRaw("Vertical"));
+
+        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), rb.velocity.y) * speed;
+        //if (rb.velocity.x > 0)
+        //{
+        //    transform.localScale = new Vector3(0.5520272f, 0.5600321f, 1);
+        //}
+        //if (rb.velocity.x < 0)
+        //{
+        //    transform.localScale = new Vector3(-0.5520272f, 0.5600321f, 1);
+        //}
     }
 }
