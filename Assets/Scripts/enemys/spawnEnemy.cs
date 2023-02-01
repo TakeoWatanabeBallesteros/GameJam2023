@@ -8,6 +8,7 @@ public class spawnEnemy : MonoBehaviour
     GameObject[] enemies;
     [SerializeField] GameObject EnemyPrefab;
     [SerializeField] float planetHeight;
+    public string planetTreeName;
     // Start is called before the first frame update
     void Start()
     {

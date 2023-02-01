@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2877350556821421370}
   - component: {fileID: 2877350556821421365}
+  - component: {fileID: 1473275972139194908}
+  - component: {fileID: 3560539285002029884}
+  - component: {fileID: 2845365710905188619}
+  - component: {fileID: 7694809214700748063}
   m_Layer: 0
   m_Name: enemie
   m_TagString: Untagged
@@ -84,6 +88,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1473275972139194908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2877350556821421371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbd4a11fe50705499c883c7181fb820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3560539285002029884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2877350556821421371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe90862c423a2074eb550641b070b700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2845365710905188619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2877350556821421371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b96415ed187cc4ea4e5302f9bb64e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeSprite: {fileID: 2143226266467477719, guid: 8ab6e514a48f045428b414c922d037b7, type: 3}
+  timeToAttack: 1
+--- !u!114 &7694809214700748063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2877350556821421371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e334e646d1d2c27468e8135ca29a4e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treePos: {fileID: 2828095492106616470, guid: 593efc87d5578e445899cf10b8bfe7b2, type: 3}
+  enemySpeed: 0.5
+  enemySpeedTree: 1
+  treeEnemyAttackPosRandom1: {x: -0.3, y: 2.2, z: 0}
+  treeEnemyAttackPosRandom2: {x: 0.3, y: 2.9, z: 0}
+  finalGroundPos: {x: 0, y: 0, z: 0}
 --- !u!1 &2877350557288150248
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,43 +11,30 @@ public class AttackState : MonoBehaviour,State
             return GetComponent<FSM>();
         }
     }
+    [SerializeField] SpriteRenderer treeSprite;
+    float timer;
+    [SerializeField] float timeToAttack;
 
-    [SerializeField] List<Transform> spawnPos;
-    GameObject[] enemies;
-    [SerializeField] GameObject EnemyPrefab;
-    [SerializeField] float planetHeight;
     private void Awake()
     {
-        enemies = new GameObject[spawnPos.Count];
+        treeSprite = GameObject.FindGameObjectWithTag("tree1").GetComponent<SpriteRenderer>();
     }
 
     void State.OnEnter()
     {
-        StartCoroutine(spawnEnemy());
+        Debug.Log("done");
+        timer = Time.time + timeToAttack;
     }
-    IEnumerator spawnEnemy()
-    {
-        for (int i = 0; i < spawnPos.Count; i++)
-        {
-            enemies[i] = Instantiate(EnemyPrefab, spawnPos[i].position, Quaternion.identity);
 
-            Vector3 spawnPosEnemie = enemies[i].transform.position;
-            enemies[i].transform.position = Vector3.zero;
-            enemies[i].transform.GetChild(0).position = spawnPosEnemie;
-            Vector3 dir = enemies[i].transform.GetChild(0).position - enemies[i].transform.position;
-            enemies[i].transform.rotation = Quaternion.LookRotation(dir);
-            enemies[i].transform.GetChild(0).position = new Vector3(0, planetHeight, 0);
-            Debug.Break();
-            yield return null;
-        }
-    }
 
     void State.OnUpdate()
     {
-        foreach (var enemie in enemies)
+        
+        if(Time.time > timer)
         {
+            Debug.Log(treeSprite);
+            treeSprite.material.SetFloat("Grow", 0); 
         }
-        //fsm.ChangeState<AttackState>();
     }
 
     void State.OnExit()
