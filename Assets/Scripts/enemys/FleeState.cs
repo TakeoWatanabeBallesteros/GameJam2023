@@ -12,13 +12,18 @@ public class FleeState : MonoBehaviour,State
         }
     }
 
-    bool isOnTree = true;
+    bool isOnTree;
     Vector3 groundPos;
     [SerializeField] float runVelocity;
+    GameObject startPos;
+    Transform enemyParent;
 
     void State.OnEnter()
     {
         groundPos = GetComponent<AppearState>().finalGroundPos;
+        Debug.Log(groundPos);
+        enemyParent = transform.parent;
+        isOnTree = true;
     }
 
     void State.OnUpdate()
@@ -26,11 +31,21 @@ public class FleeState : MonoBehaviour,State
         if (isOnTree)
         {
             transform.position = Vector3.Lerp(transform.position, groundPos, runVelocity * Time.deltaTime);
+            Vector3 dir = groundPos - transform.position;
+            if (dir.magnitude < 0.01f)
+            {
+                isOnTree = false;
+            }
         }
         else
         {
-
+            enemyParent.transform.rotation = Quaternion.Lerp(enemyParent.transform.rotation, startPos.transform.rotation, runVelocity * Time.deltaTime);
         }
+    }
+    public void SetStartPos(GameObject startPos)
+    {
+        this.startPos = startPos;
+        //Debug.Log(this.startPos.transform.eulerAngles.z);
     }
 
     void State.OnExit()

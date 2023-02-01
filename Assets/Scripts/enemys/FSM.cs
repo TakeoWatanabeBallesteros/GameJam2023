@@ -10,12 +10,13 @@ public class FSM : MonoBehaviour
     private void Awake()
     {
         nextStates = new List<State>(GetComponents<State>());
+        currentState = GetComponent<AppearState>();
+        currentState.OnEnter();
     }
     // Start is called before the first frame update
     void Start()
     {
-        currentState = GetComponent<AppearState>();
-        currentState.OnEnter();
+
     }
 
     // Update is called once per frame
@@ -32,7 +33,6 @@ public class FSM : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("soi");
         currentState.OnTrigger(collision);
     }
 

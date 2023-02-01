@@ -31,9 +31,9 @@ public class AttackState : MonoBehaviour,State
     {
         if(Time.time > timer)
         {
-            Debug.Log(tree);
             timer = Time.time + timeToAttack;
             tree.DamageTree(damageToTree);
+            //fsm.ChangeState<FleeState>();
         }
     }
     public void PlayerIsClose()
@@ -47,6 +47,9 @@ public class AttackState : MonoBehaviour,State
     }
     public void OnTrigger(Collider2D collision)
     {
-        Debug.Log("lola lolita");
+        if(collision.tag == "Player")
+        {
+            fsm.ChangeState<FleeState>();
+        }
     }
 }
