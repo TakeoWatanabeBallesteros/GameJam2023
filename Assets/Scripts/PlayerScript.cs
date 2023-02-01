@@ -20,8 +20,8 @@ public class PlayerScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        //OnPlanetMovement();
-        OnRootMovement();
+        OnPlanetMovement();
+        //OnRootMovement();
     }
 
     private void OnPlanetMovement()
