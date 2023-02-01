@@ -14,7 +14,7 @@ public class FSM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //currentState = GetComponent<IdleWhiteBoss>();
+        currentState = GetComponent<AppearState>();
         currentState.OnEnter();
     }
 
