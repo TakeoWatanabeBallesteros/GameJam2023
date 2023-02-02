@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class spawnEnemy : MonoBehaviour
 {
-    [SerializeField] List<Transform> spawnPos;
+    [SerializeField] List<GameObject> spawnPos;
     GameObject[] enemies;
     [SerializeField] GameObject EnemyPrefab;
     [SerializeField] float planetHeight;
@@ -20,7 +20,7 @@ public class spawnEnemy : MonoBehaviour
     {
         for (int i = 0; i < spawnPos.Count; i++)
         {
-            enemies[i] = Instantiate(EnemyPrefab, spawnPos[i].position, Quaternion.identity);
+            enemies[i] = Instantiate(EnemyPrefab, spawnPos[i].transform.GetChild(0).position, Quaternion.identity);
 
             Vector3 spawnPosEnemie = enemies[i].transform.position;
             enemies[i].transform.position = Vector3.zero;    
@@ -30,6 +30,7 @@ public class spawnEnemy : MonoBehaviour
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             enemies[i].transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             enemies[i].transform.rotation = Quaternion.Euler(0, 0, enemies[i].transform.eulerAngles.z - 90);
+            enemies[i].GetComponentInChildren<FleeState>().SetStartPos(spawnPos[i]);
             yield return null;
         }
     }

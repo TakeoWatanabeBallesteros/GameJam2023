@@ -14,7 +14,10 @@ public class MoveSolLluna : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Transform parentObject;
 
-    public GameObject Drop;
+    [SerializeField] GameObject sunItem;
+    [SerializeField] GameObject sunParticlePrefab;
+    [SerializeField] Vector3 appearPos;
+    [SerializeField] float DissapearTime;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +59,8 @@ public class MoveSolLluna : MonoBehaviour
             }
         }
     }
+
+
     bool timerToMove()
     {
         timer += Time.deltaTime;
@@ -71,10 +76,25 @@ public class MoveSolLluna : MonoBehaviour
         if(spriteRenderer.sprite == moonSprite)
         {
             spriteRenderer.sprite = sunSprite;
+            StartCoroutine(spawnSunInTime());
         }
         else
         {
             spriteRenderer.sprite = moonSprite;
         }
+    }
+    IEnumerator spawnSunInTime()
+    {
+        GameObject sun = Instantiate(sunItem, appearPos, Quaternion.Euler(0, 0, Random.Range(0f, 360f)));
+        GameObject sunParticle = Instantiate(sunParticlePrefab, sun.transform.GetChild(0).position, Quaternion.identity);
+        sun.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        sun.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        Destroy(sunParticle);
+        yield return new WaitForSeconds(DissapearTime);
+        Destroy(sun);
+
+
     }
 }

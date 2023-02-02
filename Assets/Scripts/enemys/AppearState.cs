@@ -49,12 +49,7 @@ public class AppearState : MonoBehaviour,State
         {
             if (enemyParent.transform.eulerAngles.z > 356 || enemyParent.transform.eulerAngles.z < 4)
             {
-                transform.position = Vector2.Lerp(transform.position, enemyAttackPos, enemySpeedTree * Time.deltaTime);
-                Vector3 dir = enemyAttackPos - transform.position;
-                if (dir.magnitude < 0.01f)
-                {
-                    fsm.ChangeState<AttackState>();
-                }
+                fsm.ChangeState<UpTreeState>();
             }
             else
             {
@@ -67,5 +62,13 @@ public class AppearState : MonoBehaviour,State
     void State.OnExit()
     {
 
+    }
+    public void OnTrigger(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            GetComponent<FleeState>().SetIsOnTree(false);
+            fsm.ChangeState<FleeState>();         
+        }
     }
 }

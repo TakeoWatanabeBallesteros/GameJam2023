@@ -31,25 +31,26 @@ public class AttackState : MonoBehaviour,State
     {
         if(Time.time > timer)
         {
-            Debug.Log(tree);
             timer = Time.time + timeToAttack;
             tree.DamageTree(damageToTree);
+            //fsm.ChangeState<FleeState>();
         }
     }
     public void PlayerIsClose()
     {
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Player")
-        {
-            fsm.ChangeState<FleeState>();
-        }
-    }
 
     void State.OnExit()
     {
 
+    }
+    public void OnTrigger(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            GetComponent<FleeState>().SetIsOnTree(true);
+            fsm.ChangeState<FleeState>();           
+        }
     }
 }
