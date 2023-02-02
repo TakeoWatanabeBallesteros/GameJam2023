@@ -7,7 +7,7 @@ public class RootMovement : MonoBehaviour
 {
     public float rootMaxHeight;
     public Transform pivotTransform;
-    [Range(2.4f, 74)] public float rootHeight;
+    [Range(0, 100)] public float rootHeight;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class RootMovement : MonoBehaviour
     void Update()
     {
         pivotTransform.position = new Vector3(0, rootHeight, 0);
-        spriteRenderer.material.SetFloat("_grow", (1 -.1f) - Scale(2.4f, 74, rootHeight));
+        spriteRenderer.material.SetFloat("_grow", 1 - Scale(0, rootMaxHeight, rootHeight));
     }
     
     private static float Scale(float min, float max, float value)

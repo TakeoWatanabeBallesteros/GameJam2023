@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="36b8b88b-2115-4a0e-8da2-87895196e576" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Root/RootMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Root/RootMaterial.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/ShaderArbol.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ShaderArbol.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ap Lill Code/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ap Lill Code/Player.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RootMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RootMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/items/output-onlinepngtools.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/items/output-onlinepngtools.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +91,7 @@
       <updated>1675193797023</updated>
       <workItem from="1675193800186" duration="608000" />
       <workItem from="1675277915683" duration="394000" />
-      <workItem from="1675329711631" duration="3613000" />
+      <workItem from="1675329711631" duration="9623000" />
     </task>
     <servers />
   </component>
