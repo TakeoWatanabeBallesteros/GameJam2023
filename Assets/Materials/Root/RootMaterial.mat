@@ -62,7 +62,7 @@ Material:
     - _QueueOffset: 0
     - _Scale: 0
     - _clip: 0.012
-    - _grow: 0.916
+    - _grow: 1
     - _metalic: 0
     - _smooth: 0
     m_Colors:

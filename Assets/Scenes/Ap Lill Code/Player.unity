@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rootMaxHeight: 72
   pivotTransform: {fileID: 352176560}
-  rootHeight: 0
+  rootHeight: 2.4
 --- !u!1 &352176559
 GameObject:
   m_ObjectHideFlags: 0
