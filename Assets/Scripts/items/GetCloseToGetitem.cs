@@ -8,6 +8,7 @@ public class GetCloseToGetitem : MonoBehaviour
     IEnumerator waterCoroutine;
     IEnumerator windCoroutine;
     IEnumerator sunCoroutine;
+    IEnumerator tierraCoroutine;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,11 @@ public class GetCloseToGetitem : MonoBehaviour
             sunCoroutine = GetComponent<GetSun>().GetItemSun();
             StartCoroutine(sunCoroutine);
         }
+        else if (GetComponent<GetTierra>() != null)
+        {
+            tierraCoroutine = GetComponent<GetTierra>().GetItemTierra();
+            StartCoroutine(tierraCoroutine);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -59,6 +65,10 @@ public class GetCloseToGetitem : MonoBehaviour
         else if (GetComponent<GetSun>() != null)
         {
             StopCoroutine(sunCoroutine);
+        }
+        else if (GetComponent<GetTierra>() != null)
+        {
+            StopCoroutine(tierraCoroutine);
         }
     }
 }
