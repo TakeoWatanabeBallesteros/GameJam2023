@@ -29,6 +29,6 @@ public class PlayerScript : MonoBehaviour
 
     private void OnRootMovement()
     {
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), rb.velocity.y) * speed;
+        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed;
     }
 }
