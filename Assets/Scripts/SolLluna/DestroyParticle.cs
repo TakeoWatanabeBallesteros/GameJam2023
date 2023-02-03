@@ -17,7 +17,6 @@ public class DestroyParticle : MonoBehaviour
     {
         if(Time.time > timer)
         {
-            Debug.Log("sdada");
             Destroy(gameObject);
         }   
     }

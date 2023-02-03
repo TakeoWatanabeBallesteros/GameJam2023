@@ -29,8 +29,15 @@ public class spawnEnemy : MonoBehaviour
             enemies[i].transform.GetChild(0).position = new Vector3(0, planetHeight, 0);
             //enemies[i].transform.rotation = Quaternion.LookRotation(dir);
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            enemies[i].transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            enemies[i].transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);     
             enemies[i].transform.rotation = Quaternion.Euler(0, 0, enemies[i].transform.eulerAngles.z - 90);
+
+            if(enemies[i].transform.eulerAngles.z > 180)
+            {
+                Debug.Log("hola");
+                enemies[i].transform.GetChild(0).localScale = new Vector3(enemies[i].transform.GetChild(0).localScale.x * -1, enemies[i].transform.GetChild(0).localScale.y, enemies[i].transform.GetChild(0).localScale.z);
+                enemies[i].transform.GetChild(0).GetComponent<Animator>().SetTrigger("appearLeft");
+            }
             enemies[i].GetComponentInChildren<FleeState>().SetStartPos(spawnPos[i]);
             yield return null;
         }

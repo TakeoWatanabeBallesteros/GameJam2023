@@ -17,20 +17,23 @@ public class FleeState : MonoBehaviour,State
     [SerializeField] float runVelocity;
     GameObject startPos;
     Transform enemyParent;
+    Animator animator;
 
     void State.OnEnter()
     {
         groundPos = GetComponent<AppearState>().finalGroundPos;
-        Debug.Log(groundPos);
+
         enemyParent = transform.parent;
+        animator = GetComponent<Animator>();
+        animator.SetBool("attack", false);
     }
 
     void State.OnUpdate()
     {
         if (isOnTree)
         {
-            transform.position = Vector3.Lerp(transform.position, groundPos, runVelocity * Time.deltaTime);
-            Vector3 dir = groundPos - transform.position;
+            enemyParent.position = Vector3.Lerp(enemyParent.position, groundPos, runVelocity * Time.deltaTime);
+            Vector3 dir = groundPos - enemyParent.position;
             if (dir.magnitude < 0.1f)
             {
                 isOnTree = false;
@@ -41,10 +44,26 @@ public class FleeState : MonoBehaviour,State
             enemyParent.transform.rotation = Quaternion.Lerp(enemyParent.transform.rotation, startPos.transform.rotation, runVelocity * Time.deltaTime);
             if(enemyParent.transform.eulerAngles.z - startPos.transform.eulerAngles.z < 2 && enemyParent.transform.eulerAngles.z - startPos.transform.eulerAngles.z > -2)
             {
-                Destroy(gameObject);
+                if(startPos.transform.eulerAngles.z > 180)
+                {
+                    animator.SetTrigger("die");
+                }
+                else
+                {
+                    animator.SetTrigger("dieLeft");
+                }
+                
+                StartCoroutine(DestroyEnemy());
             }
         }
     }
+    IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(1.5f);
+        
+            Destroy(gameObject);
+    }
+    
     public void SetStartPos(GameObject startPos)
     {
         this.startPos = startPos;

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5468364984147986390}
   - component: {fileID: 3677963214594531021}
   - component: {fileID: 3529833341330952866}
+  - component: {fileID: 1308486050}
   m_Layer: 0
   m_Name: enemie
   m_TagString: Untagged
@@ -31,9 +32,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2877350556821421371}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.28, z: 2.1956027}
-  m_LocalScale: {x: 0.25754, y: 0.25754, z: 0.25754}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.27, z: 2.195603}
+  m_LocalScale: {x: 0.035427626, y: 0.035427626, z: 0.035427626}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2877350557288150251}
@@ -79,9 +80,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: cf46c8b77748be2449160470c1abd5a3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,8 +146,8 @@ MonoBehaviour:
   treePos: {fileID: 2828095492106616470, guid: 593efc87d5578e445899cf10b8bfe7b2, type: 3}
   enemySpeed: 0.5
   enemySpeedTree: 1
-  treeEnemyAttackPosRandom1: {x: -0.3, y: 2.2, z: 0}
-  treeEnemyAttackPosRandom2: {x: 0.3, y: 2.9, z: 0}
+  treeEnemyAttackPosRandom1: {x: -0.3, y: 2.1, z: 0}
+  treeEnemyAttackPosRandom2: {x: 0.3, y: 3, z: 0}
   startPos: {x: 0, y: 0, z: 0}
   finalGroundPos: {x: 0, y: 0, z: 0}
 --- !u!58 &5468364984147986390
@@ -162,9 +163,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021734843, y: 0}
+  m_Offset: {x: -0.8084937, y: 0}
   serializedVersion: 2
-  m_Radius: 2.1518214
+  m_Radius: 24.983038
 --- !u!50 &3677963214594531021
 Rigidbody2D:
   serializedVersion: 4
@@ -199,9 +200,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeedTree: 1
-  treeEnemyAttackPosRandom1: {x: -0.3, y: 2.2, z: 0}
-  treeEnemyAttackPosRandom2: {x: 0.3, y: 2.9, z: 0}
+  treeEnemyAttackPosRandom1: {x: -0.3, y: 0, z: 0}
+  treeEnemyAttackPosRandom2: {x: 0.3, y: 1, z: 0}
   finalGroundPos: {x: 0, y: 0, z: 0}
+--- !u!95 &1308486050
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2877350556821421371}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3b31e5bad4025941842a61f30b7f8db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2877350557288150248
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,5 +253,5 @@ Transform:
   m_Children:
   - {fileID: 2877350556821421370}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
