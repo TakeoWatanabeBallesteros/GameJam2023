@@ -46,6 +46,7 @@ public class GetCloseToGetitem : MonoBehaviour
         {
             tierraCoroutine = GetComponent<GetTierra>().GetItemTierra();
             StartCoroutine(tierraCoroutine);
+            Debug.Log("hola");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

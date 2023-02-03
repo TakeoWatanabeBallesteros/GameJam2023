@@ -128,6 +128,8 @@ GameObject:
   - component: {fileID: 250775397061274489}
   - component: {fileID: 250775397061274484}
   - component: {fileID: 1976536146}
+  - component: {fileID: 241382726087157640}
+  - component: {fileID: 6082823631712313104}
   m_Layer: 0
   m_Name: luzdrop
   m_TagString: Untagged
@@ -216,9 +218,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08188546, y: 0.23395856}
+  m_Offset: {x: -0.08325375, y: 0.23395866}
   serializedVersion: 2
-  m_Radius: 1.6658756
+  m_Radius: 5.1337667
 --- !u!50 &250775397061274484
 Rigidbody2D:
   serializedVersion: 4
@@ -260,6 +262,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &241382726087157640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250775397061274488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f21a91f8649414bb6af9a4de35a44c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 1472685566128330786, guid: 9a16e58ff42e6934097b3b09c7a8f587, type: 3}
+  player: {fileID: 0}
+  playerItemsScript: {fileID: 0}
+  maxItemGetPerHit: 4
+  minItemGetPerHit: 2
+  maxHits: 4
+  minHits: 1
+  maxTimePerHit: 1.5
+  minTimePerHit: 0.5
+  textPrefab: {fileID: 1223270936859354633, guid: bc8cee236e0918145bb5e70b3a5e7689, type: 3}
+  dissapearTime: 8
+  particleDissapear: {fileID: 9128332190757336964, guid: d932fdb2e90966b478114210375291a8, type: 3}
+--- !u!114 &6082823631712313104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250775397061274488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b231fec53a0379438a79db7f0f0e292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &250775397839740011
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,5 +328,5 @@ Transform:
   m_Children:
   - {fileID: 250775397061274487}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -5,8 +5,8 @@ using TMPro;
 public class GetSun : MonoBehaviour
 {
     [SerializeField] GameObject itemPrefab;
-    [SerializeField] GameObject player;
-    [SerializeField] PlayerItems playerItemsScript;
+    GameObject player;
+    PlayerItems playerItemsScript;
     [SerializeField] int maxItemGetPerHit;
     [SerializeField] int minItemGetPerHit;
     [SerializeField] int maxHits;
@@ -16,24 +16,31 @@ public class GetSun : MonoBehaviour
 
     [SerializeField] GameObject textPrefab;
 
-    [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] CircleCollider2D circleCollider;
-
     int totalHits;
     int hits;
-    [SerializeField] float regenerateTime;
+    [SerializeField] float dissapearTime;
+    float timer = 0;
+    [SerializeField] GameObject particleDissapear;
 
     // Start is called before the first frame update
     void Start()
     {
         totalHits = Random.Range(minHits, maxHits);
         hits = 0;
+        timer = Time.time + dissapearTime;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerItemsScript = player.GetComponent<PlayerItems>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(Time.time > timer)
+        {
+            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
+            Instantiate(particleDissapear, transform.position, Quaternion.identity);
+        }
     }
 
     public IEnumerator GetItemSun()
@@ -55,14 +62,13 @@ public class GetSun : MonoBehaviour
             totalHits = Random.Range(minHits, maxHits);
         }
         hits = 0;
-        StartCoroutine(regenerateItem());
+        Instantiate(particleDissapear, transform.position, Quaternion.identity);
+        Destroy(gameObject.transform.parent.gameObject);
+        Destroy(gameObject);
     }
-    IEnumerator regenerateItem()
+    public void DoubleItem()
     {
-        spriteRenderer.enabled = false;
-        circleCollider.enabled = false;
-        yield return new WaitForSeconds(regenerateTime);
-        spriteRenderer.enabled = true;
-        circleCollider.enabled = true;
+        maxItemGetPerHit *= 2;
+        minItemGetPerHit += 2;
     }
 }

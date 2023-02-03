@@ -9,6 +9,7 @@ public class spawnEnemy : MonoBehaviour
     [SerializeField] GameObject EnemyPrefab;
     [SerializeField] float planetHeight;
     public string planetTreeName;
+    public bool hasRadar = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,9 @@ public class spawnEnemy : MonoBehaviour
             enemies[i].GetComponentInChildren<FleeState>().SetStartPos(spawnPos[i]);
             yield return null;
         }
+    }
+    public void EspantabichosPowerUp()
+    {
+
     }
 }

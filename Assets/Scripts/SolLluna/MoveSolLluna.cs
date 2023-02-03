@@ -18,7 +18,7 @@ public class MoveSolLluna : MonoBehaviour
     [SerializeField] GameObject sunParticlePrefab;
     [SerializeField] GameObject sunDissapearPrefab;
     [SerializeField] Vector3 appearPos;
-    [SerializeField] float DissapearTime;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -93,12 +93,5 @@ public class MoveSolLluna : MonoBehaviour
         sun.SetActive(true);
         yield return new WaitForSeconds(2f);
         Destroy(sunParticle);
-        yield return new WaitForSeconds(DissapearTime);
-        GameObject sunDissapear = Instantiate(sunDissapearPrefab, sun.transform.GetChild(0).position, Quaternion.identity);
-        Destroy(sun);
-        yield return new WaitForSeconds(2f);
-        Destroy(sunDissapear);
-
-
     }
 }

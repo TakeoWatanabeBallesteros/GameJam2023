@@ -42,4 +42,8 @@ public class PlayerItems : MonoBehaviour
         tierraItems += valor;
         tierraText.text = tierraItems.ToString();
     }
+    public void SinLimite()
+    {
+
+    }
 }
