@@ -33,7 +33,7 @@ public class UpTreeState : MonoBehaviour,State
     {
         transform.position = Vector2.Lerp(transform.position, enemyAttackPos, enemySpeedTree * Time.deltaTime);
         Vector3 dir = enemyAttackPos - transform.position;
-        if (dir.magnitude < 0.01f)
+        if (dir.magnitude < 0.1f)
         {
             fsm.ChangeState<AttackState>();
         }

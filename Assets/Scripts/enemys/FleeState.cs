@@ -31,7 +31,7 @@ public class FleeState : MonoBehaviour,State
         {
             transform.position = Vector3.Lerp(transform.position, groundPos, runVelocity * Time.deltaTime);
             Vector3 dir = groundPos - transform.position;
-            if (dir.magnitude < 0.01f)
+            if (dir.magnitude < 0.1f)
             {
                 isOnTree = false;
             }
@@ -39,6 +39,10 @@ public class FleeState : MonoBehaviour,State
         else
         {
             enemyParent.transform.rotation = Quaternion.Lerp(enemyParent.transform.rotation, startPos.transform.rotation, runVelocity * Time.deltaTime);
+            if(enemyParent.transform.eulerAngles.z - startPos.transform.eulerAngles.z < 2 && enemyParent.transform.eulerAngles.z - startPos.transform.eulerAngles.z > -2)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void SetStartPos(GameObject startPos)
