@@ -65,4 +65,9 @@ public class GetWater : MonoBehaviour
         spriteRenderer.enabled = true;
         circleCollider.enabled = true;
     }
+    public void DoubleItem()
+    {
+        maxItemGetPerHit *= 2;
+        minItemGetPerHit += 2;
+    }
 }
