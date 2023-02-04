@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 125742339}
   m_Layer: 0
   m_Name: PowerUpCheckpoint1 (3)
-  m_TagString: Untagged
+  m_TagString: decision4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976b2105f6a93494580485848297db8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desicion: {fileID: 5592871858603191914, guid: 5eb2f3dd0a014de4eba31c4eed664d09, type: 3}
+  desicionPrefab: {fileID: 5592871858603191914, guid: 5eb2f3dd0a014de4eba31c4eed664d09, type: 3}
   button1: {fileID: 1041602335}
   button2: {fileID: 2142338370}
   cameraPos: {fileID: 2028311517}
@@ -715,6 +715,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 55c0a69965da36a4d9a31694e8480c2b, type: 3}
+--- !u!1 &395625629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395625631}
+  - component: {fileID: 395625630}
+  m_Layer: 0
+  m_Name: powerUpController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &395625630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395625629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba00fa4b469c4b240a0391950ed813f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  playerItem: {fileID: 634214638}
+--- !u!4 &395625631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395625629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.912032, y: 22.562841, z: -3.7411668}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &413267461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7611577100972038932, guid: b788738e832187e449bd7317cd854d1b, type: 3}
@@ -733,7 +779,7 @@ GameObject:
   - component: {fileID: 453904407}
   m_Layer: 0
   m_Name: PowerUpCheckpoint1 (1)
-  m_TagString: Untagged
+  m_TagString: decision2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -791,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976b2105f6a93494580485848297db8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desicion: {fileID: 5452768452213757447, guid: 4545752be893c60409e5ea146dbc4fe2, type: 3}
+  desicionPrefab: {fileID: 5452768452213757447, guid: 4545752be893c60409e5ea146dbc4fe2, type: 3}
   button1: {fileID: 501714639}
   button2: {fileID: 1928131195}
   cameraPos: {fileID: 2028311517}
@@ -863,11 +909,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8502618423865504780, guid: bad7e67c091e88d48a52c459f09d1879, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.47
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 8502618423865504780, guid: bad7e67c091e88d48a52c459f09d1879, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.07
+      value: 26.1
       objectReference: {fileID: 0}
     - target: {fileID: 8502618423865504780, guid: bad7e67c091e88d48a52c459f09d1879, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2849,9 +2895,17 @@ PrefabInstance:
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 250451637, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 395625630}
+    - target: {fileID: 250451637, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Radar
+      objectReference: {fileID: 0}
     - target: {fileID: 263525994, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 263525996, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Interactable
@@ -2863,31 +2917,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 263525996, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
-      value: 0.5803922
+      value: 0.02745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 263525996, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 395625630}
+    - target: {fileID: 263525996, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TP
       objectReference: {fileID: 0}
     - target: {fileID: 440918331, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 440918331, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 395625630}
+    - target: {fileID: 440918331, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AyudaDeDemeter
+      objectReference: {fileID: 0}
     - target: {fileID: 545737899, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 545737899, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 395625630}
+    - target: {fileID: 545737899, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Espantabichos
+      objectReference: {fileID: 0}
     - target: {fileID: 712687577, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 712687579, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 395625630}
+    - target: {fileID: 712687579, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GuantesDeJack
       objectReference: {fileID: 0}
     - target: {fileID: 1280296615, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1280296615, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 395625630}
+    - target: {fileID: 1280296615, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Humilde
+      objectReference: {fileID: 0}
     - target: {fileID: 1454848736, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1454848736, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 395625630}
+    - target: {fileID: 1454848736, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SinFondo
+      objectReference: {fileID: 0}
     - target: {fileID: 1905681602, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905681602, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 395625630}
+    - target: {fileID: 1905681602, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BambasErizo
       objectReference: {fileID: 0}
     - target: {fileID: 1599264331964343041, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Name
@@ -3239,7 +3349,7 @@ GameObject:
   - component: {fileID: 1928131198}
   m_Layer: 0
   m_Name: PowerUpCheckpoint1 (2)
-  m_TagString: Untagged
+  m_TagString: decision3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3297,7 +3407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976b2105f6a93494580485848297db8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desicion: {fileID: 332183681480349226, guid: 8595631ac7883284a8e0f7659aef977a, type: 3}
+  desicionPrefab: {fileID: 332183681480349226, guid: 8595631ac7883284a8e0f7659aef977a, type: 3}
   button1: {fileID: 2071426069}
   button2: {fileID: 1386699281}
   cameraPos: {fileID: 2028311517}
@@ -3497,7 +3607,7 @@ GameObject:
   - component: {fileID: 2000097675}
   m_Layer: 0
   m_Name: PowerUpCheckpoint1
-  m_TagString: Untagged
+  m_TagString: decision1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3555,7 +3665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976b2105f6a93494580485848297db8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desicion: {fileID: 7904676788367271559, guid: f4b18514573311548a52d916ca4eec89, type: 3}
+  desicionPrefab: {fileID: 7904676788367271559, guid: f4b18514573311548a52d916ca4eec89, type: 3}
   button1: {fileID: 896482774}
   button2: {fileID: 1970809008}
   cameraPos: {fileID: 2028311517}
@@ -3805,7 +3915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028311515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.4699993, y: 26.07, z: -32}
+  m_LocalPosition: {x: 5.3999996, y: 26.1, z: -32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

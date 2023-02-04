@@ -21,14 +21,17 @@ public class PowerUpScript : MonoBehaviour
     }
     public void Radar()
     {
-        enemy.hasRadar = true;
+        //enemy.hasRadar = true;
+        GameObject.FindGameObjectWithTag("decision3").GetComponent<PowerUpController>().DestroyDesicion();
     }
     public void TP()
     {
-
+        GameObject.FindGameObjectWithTag("decision4").GetComponent<PowerUpController>().DestroyDesicion();
     }
     public void AyudaDeDemeter()
     {
+        GameObject.FindGameObjectWithTag("decision1").GetComponent<PowerUpController>().DestroyDesicion();
+
         List<GameObject> cacas = new List<GameObject>(GameObject.FindGameObjectsWithTag("getCaca"));
         List<GameObject> tierras = new List<GameObject>(GameObject.FindGameObjectsWithTag("getTierra"));
         List<GameObject> aguas = new List<GameObject>(GameObject.FindGameObjectsWithTag("getWater"));
@@ -58,34 +61,24 @@ public class PowerUpScript : MonoBehaviour
     }
     public void GuantesDeJack()
     {
-
+        GameObject.FindGameObjectWithTag("decision4").GetComponent<PowerUpController>().DestroyDesicion();
     }
     public void SinFondo()
     {
         playerItem.SinLimite();
+        GameObject.FindGameObjectWithTag("decision2").GetComponent<PowerUpController>().DestroyDesicion();
     }
     public void Humilde()
     {
-
+        GameObject.FindGameObjectWithTag("decision1").GetComponent<PowerUpController>().DestroyDesicion();
     }
     public void BambasErizo()
     {
-
+        GameObject.FindGameObjectWithTag("decision2").GetComponent<PowerUpController>().DestroyDesicion();
     }
     public void Espantabichos()
     {
         enemy.EspantabichosPowerUp();
-    }
-    void ClockButton(GameObject b1,GameObject b2,GameObject desicion)
-    {
-        b1.SetActive(false);
-        b2.SetActive(false);
-        desicion.GetComponent<Animator>().SetTrigger("dissapear");
-        StartCoroutine(DestroyDesicion(desicion));
-    }
-    IEnumerator DestroyDesicion(GameObject desicion)
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(desicion);
+        GameObject.FindGameObjectWithTag("decision3").GetComponent<PowerUpController>().DestroyDesicion();
     }
 }
