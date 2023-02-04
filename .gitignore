@@ -1,3 +1,4 @@
+/.idea/
 /.vscode/
 /[Ll]ibrary/
 /[Tt]emp/
@@ -71,3 +72,19 @@ crashlytics-build.properties
 Temp/UnityLockfile
 Temp/workerlic
 Library/EditorInstance.json
+
+
+
+# Default ignored files
+.idea/shelf/
+.idea/workspace.xml
+# Rider ignored files
+.idea/contentModel.xml
+.idea/projectSettingsUpdater.xml
+.idea/modules.xml
+.idea/.idea.GameJam2023.iml
+# Editor-based HTTP Client requests
+.idea/httpRequests/
+# Datasource local storage ignored files
+.idea/dataSources/
+.idea/dataSources.local.xml
