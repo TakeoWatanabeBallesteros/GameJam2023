@@ -18,6 +18,7 @@ public class FleeState : MonoBehaviour,State
     GameObject startPos;
     Transform enemyParent;
     Animator animator;
+    spawnEnemy spawn;
 
     void State.OnEnter()
     {
@@ -26,6 +27,7 @@ public class FleeState : MonoBehaviour,State
         enemyParent = transform.parent;
         animator = GetComponent<Animator>();
         animator.SetBool("attack", false);
+        //spawn = GameObject.FindGameObjectWithTag("SpawnEnemy").GetComponent<spawnEnemy>();
     }
 
     void State.OnUpdate()
@@ -52,7 +54,9 @@ public class FleeState : MonoBehaviour,State
                 {
                     animator.SetTrigger("dieLeft");
                 }
-                
+                //spawn.CanAppearEnemy();
+
+
                 StartCoroutine(DestroyEnemy());
             }
         }
@@ -61,7 +65,7 @@ public class FleeState : MonoBehaviour,State
     {
         yield return new WaitForSeconds(1.5f);
         
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
     }
     
     public void SetStartPos(GameObject startPos)

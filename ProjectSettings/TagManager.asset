@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - tree1
+  - decision4
+  - decision2
+  - decision3
+  - decision1
+  - SpawnEnemy
   layers:
   - Default
   - TransparentFX

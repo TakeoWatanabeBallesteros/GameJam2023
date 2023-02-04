@@ -25,7 +25,6 @@ public class AttackState : MonoBehaviour,State
 
     void State.OnEnter()
     {
-        Debug.Log("hola");
         timer = Time.time + timeToAttack;
         animator.SetBool("attack",true);
     }
