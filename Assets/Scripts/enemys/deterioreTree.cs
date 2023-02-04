@@ -8,6 +8,8 @@ public class deterioreTree : MonoBehaviour
     float life = 1;
     float lifeLerp = 1;
     [SerializeField] float deterioreTime;
+    bool canDamage = true;
+    float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,12 @@ public class deterioreTree : MonoBehaviour
     }
     public void DamageTree(float damage)
     {
-        life -= damage;      
+        if (canDamage)
+        {
+            life -= damage;
+            canDamage = false;
+            Debug.Log("dmg");
+        }          
     }
 
     // Update is called once per frame
@@ -23,5 +30,14 @@ public class deterioreTree : MonoBehaviour
     {
         lifeLerp = Mathf.Lerp(lifeLerp, life, deterioreTime * Time.deltaTime);
         spriteTree.material.SetFloat("_grow", lifeLerp);
+        if (!canDamage)
+        {
+            timer += Time.deltaTime;
+            if(timer > 1)
+            {
+                canDamage = true;
+                timer = 0;
+            }
+        }
     }
 }

@@ -15,15 +15,18 @@ public class AttackState : MonoBehaviour,State
     float timer;
     [SerializeField] float timeToAttack;
     [SerializeField] float damageToTree;
+    Animator animator;
 
     private void Awake()
     {
         tree = GameObject.FindGameObjectWithTag("tree1").GetComponent<deterioreTree>();
+        animator = GetComponent<Animator>();
     }
 
     void State.OnEnter()
     {
         timer = Time.time + timeToAttack;
+        animator.SetBool("attack",true);
     }
 
 

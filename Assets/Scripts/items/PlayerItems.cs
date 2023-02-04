@@ -9,11 +9,13 @@ public class PlayerItems : MonoBehaviour
     public int windItems = 0;
     public int cacaItems = 0;
     public int waterItems = 0;
+    public int tierraItems = 0;
 
     [SerializeField] TextMeshProUGUI sunText;
     [SerializeField] TextMeshProUGUI windText;
     [SerializeField] TextMeshProUGUI cacaText;
     [SerializeField] TextMeshProUGUI waterText;
+    [SerializeField] TextMeshProUGUI tierraText;
 
     public void ChangeSunItems(int valor)
     {
@@ -34,5 +36,14 @@ public class PlayerItems : MonoBehaviour
     {
         cacaItems += valor;
         cacaText.text = cacaItems.ToString();
+    }
+    public void ChangeTierraItems(int valor)
+    {
+        tierraItems += valor;
+        tierraText.text = tierraItems.ToString();
+    }
+    public void SinLimite()
+    {
+
     }
 }

@@ -47,14 +47,14 @@ public class AppearState : MonoBehaviour,State
     {
         if (canMove)
         {
-            if (enemyParent.transform.eulerAngles.z > 356 || enemyParent.transform.eulerAngles.z < 4)
+            if (enemyParent.transform.eulerAngles.z > 357 || enemyParent.transform.eulerAngles.z < 3)
             {
                 fsm.ChangeState<UpTreeState>();
             }
             else
             {
                 enemyParent.transform.rotation = Quaternion.Lerp(enemyParent.transform.rotation, treePos.transform.rotation, enemySpeed * Time.deltaTime);
-                finalGroundPos = transform.position;
+                finalGroundPos = enemyParent.transform.position;
             }
         }                    
     }
