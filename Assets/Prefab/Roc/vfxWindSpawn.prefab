@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3971977515284924195
+--- !u!1001 &265592625396330078
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -19,6 +19,14 @@ PrefabInstance:
     - target: {fileID: 3730366941301490299, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730366942696271670, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 8.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730366942696271670, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 3730366942696271670, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -46,19 +54,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315480, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_Name
-      value: vfxWaterSpawn
+      value: vfxWindSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3729858
+      value: 4.37004
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.8886
+      value: 16.021294
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalPosition.z
@@ -66,19 +74,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.97030973
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.24186578
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -90,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943269315481, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -27.993
       objectReference: {fileID: 0}
     - target: {fileID: 3730366943290527983, guid: f26d33c5ee1568746997e5773ad5b553, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
