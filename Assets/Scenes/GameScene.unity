@@ -1633,6 +1633,7 @@ MonoBehaviour:
   enemy: {fileID: 2098975537}
   playerItem: {fileID: 0}
   playerScript: {fileID: 0}
+  root: {fileID: 0}
 --- !u!4 &395625631
 Transform:
   m_ObjectHideFlags: 0
@@ -4634,7 +4635,7 @@ GameObject:
   - component: {fileID: 1544378008}
   m_Layer: 0
   m_Name: DarCosas
-  m_TagString: Untagged
+  m_TagString: tree1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
