@@ -23,11 +23,11 @@ public class PlanetaBehaviour : MonoBehaviour
 
     public void UnblockLats()
     {
-        // lats.SetActive(false);
+        lats.SetActive(false);
     }
     
     public void BlockLats()
     {
-        // lats.SetActive(true);
+        lats.SetActive(true);
     }
 }
