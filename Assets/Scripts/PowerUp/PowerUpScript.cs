@@ -8,6 +8,8 @@ public class PowerUpScript : MonoBehaviour
     [SerializeField] spawnEnemy enemy;
     [Header("SinFondo")]
     [SerializeField] PlayerItems playerItem;
+
+    [SerializeField] private PlayerScript playerScript;
     // Start is called before the first frame update
     void Start()
     {
