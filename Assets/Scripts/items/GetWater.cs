@@ -45,6 +45,7 @@ public class GetWater : MonoBehaviour
             else
             {
                 gettingItems = transform;
+                
             }
         }
     }

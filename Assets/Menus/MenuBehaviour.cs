@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuBehaviour : MonoBehaviour
 {
+
+    public void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("night");
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("GameScene");

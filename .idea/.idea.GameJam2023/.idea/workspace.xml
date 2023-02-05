@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36b8b88b-2115-4a0e-8da2-87895196e576" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam2023/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/MatTree.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatTree.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Roc/Raiz.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Roc/Raiz.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ap Lill Code/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ap Lill Code/Player.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioManager/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManager/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Planetas/PlanetaBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Planetas/PlanetaBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RootMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RootMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/items/PlayerItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/items/PlayerItems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Raiz/RaizBifurcacion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Raiz/RaizBifurcacion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Raiz/RaizBifurcacion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Raiz/RaizBifurcacion.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +20,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Planetas/PlanetaBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IA/Assets/AICourse/FSMs/FSMExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IA/Assets/Exercises/Exer_FSMs/ANT_LIFE/FSM_TwoPointWandering.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -37,9 +43,9 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\takeo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\takeo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\takeo\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\Takeo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Takeo\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Takeo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
@@ -93,6 +99,7 @@
       <workItem from="1675277915683" duration="394000" />
       <workItem from="1675329711631" duration="9623000" />
       <workItem from="1675437007938" duration="3836000" />
+      <workItem from="1675548301469" duration="31837000" />
     </task>
     <servers />
   </component>
