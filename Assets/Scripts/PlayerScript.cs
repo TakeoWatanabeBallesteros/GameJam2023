@@ -47,9 +47,9 @@ public class PlayerScript : MonoBehaviour
         else if(!onGround && onRoot && rb.velocity == Vector2.zero) anim.SetTrigger("IdleClimb");
         else if(onRoot && rb.velocity.y != 0) anim.SetTrigger("Climb");
 
-        if (canTP && Input.GetKey(KeyCode.E))
+        if (canTP && Input.GetKeyDown(KeyCode.E))
         {
-            
+            transform.position = tpPos;
         }
     }
 
@@ -78,15 +78,15 @@ public class PlayerScript : MonoBehaviour
             transform.up = -(planetPivot.position - transform.position);
             transform.position += (planetPivot.position - transform.position).normalized * 0.1f;
         }
-        else if(other.CompareTag("Tp1"))
+        else if(other.CompareTag("tp1"))
         {
             tpPos = tp2.transform.position;
-            canTP = true;
+            canTP = !canTP;
         }
-        else if(other.CompareTag("Tp2"))
+        else if(other.CompareTag("tp2"))
         {
             tpPos = tp1.transform.position;
-            canTP = true;
+            canTP = !canTP;
         }
         else if(other.CompareTag("Root"))
         {
@@ -109,13 +109,13 @@ public class PlayerScript : MonoBehaviour
             transform.rotation = Quaternion.identity;
             transform.position += Vector3.up * 0.1f;
         }
-        else if(other.CompareTag("Tp1"))
+        else if(other.CompareTag("tp1"))
         {
-            canTP = false;
+            
         }
-        else if(other.CompareTag("Tp2"))
+        else if(other.CompareTag("tp2"))
         {
-            canTP = false;
+            
         }
         else if(other.CompareTag("Root"))
         {
