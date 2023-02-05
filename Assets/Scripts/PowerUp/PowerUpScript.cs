@@ -73,6 +73,8 @@ public class PowerUpScript : MonoBehaviour
     public void Humilde()
     {
         GameObject.FindGameObjectWithTag("decision1").GetComponent<PowerUpController>().DestroyDesicion();
+
+
     }
     public void BambasErizo()
     {

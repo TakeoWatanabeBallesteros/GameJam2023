@@ -9,6 +9,7 @@ public class GetCloseToGetitem : MonoBehaviour
     IEnumerator windCoroutine;
     IEnumerator sunCoroutine;
     IEnumerator tierraCoroutine;
+    public bool isInRange = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class GetCloseToGetitem : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            isInRange = true;
             if (GetComponent<GetCaca>() != null)
             {
                 cacaCoroutine = GetComponent<GetCaca>().GetItemCaca();
@@ -49,13 +51,13 @@ public class GetCloseToGetitem : MonoBehaviour
                 tierraCoroutine = GetComponent<GetTierra>().GetItemTierra();
                 StartCoroutine(tierraCoroutine);
             }
-        }
-        
+        }    
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
+            isInRange = false;
             if (GetComponent<GetCaca>() != null)
             {
                 StopCoroutine(cacaCoroutine);
