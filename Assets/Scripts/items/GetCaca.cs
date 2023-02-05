@@ -46,6 +46,7 @@ public class GetCaca : MonoBehaviour
             else
             {
                 gettingItems = transform;
+                
             }
         }
     }
