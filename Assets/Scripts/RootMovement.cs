@@ -35,7 +35,7 @@ public class RootMovement : MonoBehaviour
     private float[] stp = new float[5];
 
 
-    private float minMin = 5.1f;
+    private float minMin = 1.769f;
     private float maxMax = 48.8f;
 
     private float diff;
@@ -93,6 +93,7 @@ public class RootMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(!other.CompareTag("Player")) return;
         canvas.SetActive(true);
         PlayerItems items = other.GetComponent<PlayerItems>();
         switch (stage)
@@ -133,7 +134,7 @@ public class RootMovement : MonoBehaviour
                sunText.text = $"{stage1[2]} / 0";
                cacaText.text = $"{stage1[3]} / 0";
                windText.text = $"{stage1[4]} / 0";
-               var a = 5;
+               var a = 6;
                foreach (int ap in stage1)
                {
                    a -= ap;
@@ -190,7 +191,7 @@ public class RootMovement : MonoBehaviour
                sunText.text = $"{stage2[2]} / 0";
                cacaText.text = $"{stage2[3]} / 0";
                windText.text = $"{stage2[4]} / 0";
-               a = 12;
+               a = 14;
                foreach (int ap in stage2)
                {
                    a -= ap;
@@ -201,11 +202,11 @@ public class RootMovement : MonoBehaviour
                {
                    if(ap > 0) return;
                }
-               tierraText.text = $"{stage3[0]} / 0";
+               tierraText.text = $"{stage3[0]} / {six}";
                waterText.text = $"{stage3[1]} / {eight}";
-               sunText.text = $"{stage3[2]} / {six}";
+               sunText.text = $"{stage3[2]} / 0";
                cacaText.text = $"{stage3[3]} / 0";
-               windText.text = $"{stage3[4]} / 0";
+               windText.text = $"{stage3[4]} / {six}";
                stage++;
                rootMinHeight = rootMaxHeight;
                rootMaxHeight = stp[stage - 1];
@@ -241,12 +242,12 @@ public class RootMovement : MonoBehaviour
                    stage3[4] = Math.Max(stage3[4] -= items.windItems,0);
                    plitms.ChangeWindItems(-s);
                }
-               tierraText.text = $"{stage3[0]} / 0";
+               tierraText.text = $"{stage3[0]} / {six}";
                waterText.text = $"{stage3[1]} / {eight}";
-               sunText.text = $"{stage3[2]} / {six}";
+               sunText.text = $"{stage3[2]} / 0";
                cacaText.text = $"{stage3[3]} / 0";
-               windText.text = $"{stage3[4]} / 0";
-               a = 12;
+               windText.text = $"{stage3[4]} / {six}";
+               a = 20;
                foreach (int ap in stage3)
                {
                    a -= ap;
@@ -260,11 +261,11 @@ public class RootMovement : MonoBehaviour
                stage++;
                rootMinHeight = rootMaxHeight;
                rootMaxHeight = stp[stage - 1];
-               tierraText.text = $"{stage4[0]} / 0";
-               waterText.text = $"{stage4[1]} / 0";
-               sunText.text = $"{stage4[2]} / {eight}";
-               cacaText.text = $"{stage4[3]} / {six}";
-               windText.text = $"{stage4[4]} / 0";
+               tierraText.text = $"{stage4[0]} / {six}";
+               waterText.text = $"{stage4[1]} / {six}";
+               sunText.text = $"{stage4[2]} / {six}";
+               cacaText.text = $"{stage4[3]} / 0";
+               windText.text = $"{stage4[4]} / {eight}";
                break;
            case 4:
                if (stage4[0] > 0)
@@ -297,12 +298,12 @@ public class RootMovement : MonoBehaviour
                    stage4[4] = Math.Max(stage4[4] -= items.windItems,0);
                    plitms.ChangeWindItems(-s);
                }
-               tierraText.text = $"{stage4[0]} / 0";
-               waterText.text = $"{stage4[1]} / 0";
-               sunText.text = $"{stage4[2]} / {eight}";
-               cacaText.text = $"{stage4[3]} / {six}";
-               windText.text = $"{stage4[4]} / 0";
-               a = 12;
+               tierraText.text = $"{stage4[0]} / {six}";
+               waterText.text = $"{stage4[1]} / {six}";
+               sunText.text = $"{stage4[2]} / {six}";
+               cacaText.text = $"{stage4[3]} / 0";
+               windText.text = $"{stage4[4]} / {eight}";
+               a = 26;
                foreach (int ap in stage4)
                {
                    a -= ap;
@@ -316,11 +317,11 @@ public class RootMovement : MonoBehaviour
                stage++;
                rootMinHeight = rootMaxHeight;
                rootMaxHeight = stp[stage - 1];
-               tierraText.text = $"{stage5[0]} / 0";
-               waterText.text = $"{stage5[1]} / 0";
-               sunText.text = $"{stage5[2]} / 0";
-               cacaText.text = $"{stage5[3]} / 0";
-               windText.text = $"{stage5[4]} / {eight}";
+               tierraText.text = $"{stage5[0]} / {six}";
+               waterText.text = $"{stage5[1]} / {six}";
+               sunText.text = $"{stage5[2]} / {six}";
+               cacaText.text = $"{stage5[3]} / {eight}";
+               windText.text = $"{stage5[4]} / {six}";
                break;
            case 5:
                if (stage5[0] > 0)
@@ -353,12 +354,12 @@ public class RootMovement : MonoBehaviour
                    stage5[4] = Math.Max(stage5[4] -= items.windItems,0);
                    plitms.ChangeWindItems(-s);
                }
-               tierraText.text = $"{stage5[0]} / 0";
-               waterText.text = $"{stage5[1]} / 0";
-               sunText.text = $"{stage5[2]} / 0";
-               cacaText.text = $"{stage5[3]} / 0";
-               windText.text = $"{stage5[4]} / {eight}";
-               a = 7;
+               tierraText.text = $"{stage5[0]} / {six}";
+               waterText.text = $"{stage5[1]} / {six}";
+               sunText.text = $"{stage5[2]} / {six}";
+               cacaText.text = $"{stage5[3]} / {eight}";
+               windText.text = $"{stage5[4]} / {six}";
+               a = 32;
                foreach (int ap in stage2)
                {
                    a -= ap;

@@ -30,7 +30,6 @@ public class spawnEnemy : MonoBehaviour
             canAppear = false;
             if (hasRadar)
             {
-                Debug.Log("sad");
                 StartCoroutine(Alert());
             }
             StartCoroutine(spawnEnemyInPos());

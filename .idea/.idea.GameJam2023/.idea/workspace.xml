@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="36b8b88b-2115-4a0e-8da2-87895196e576" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Roc/Desicion1Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Roc/Desicion1Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Roc/Desicion2Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Roc/Desicion2Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Roc/Desicion3Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Roc/Desicion3Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Roc/Desicion4Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Roc/Desicion4Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Roc/enemiePivot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Roc/enemiePivot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreditsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreditsScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Planetas/PlanetaBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Planetas/PlanetaBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RootMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RootMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/enemys/spawnEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/enemys/spawnEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +101,7 @@
       <workItem from="1675277915683" duration="394000" />
       <workItem from="1675329711631" duration="9623000" />
       <workItem from="1675437007938" duration="3836000" />
-      <workItem from="1675548301469" duration="36076000" />
+      <workItem from="1675548301469" duration="41921000" />
     </task>
     <servers />
   </component>
