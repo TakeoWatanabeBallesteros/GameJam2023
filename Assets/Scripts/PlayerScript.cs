@@ -78,6 +78,16 @@ public class PlayerScript : MonoBehaviour
             transform.up = -(planetPivot.position - transform.position);
             transform.position += (planetPivot.position - transform.position).normalized * 0.1f;
         }
+        else if(other.CompareTag("Tp1"))
+        {
+            tpPos = tp2.transform.position;
+            canTP = true;
+        }
+        else if(other.CompareTag("Tp2"))
+        {
+            tpPos = tp1.transform.position;
+            canTP = true;
+        }
         else if(other.CompareTag("Root"))
         {
             onRoot = true;
@@ -99,6 +109,14 @@ public class PlayerScript : MonoBehaviour
             transform.rotation = Quaternion.identity;
             transform.position += Vector3.up * 0.1f;
         }
+        else if(other.CompareTag("Tp1"))
+        {
+            canTP = false;
+        }
+        else if(other.CompareTag("Tp2"))
+        {
+            canTP = false;
+        }
         else if(other.CompareTag("Root"))
         {
             onRoot = false;
@@ -119,6 +137,5 @@ public class PlayerScript : MonoBehaviour
     {
         tp1.SetActive(true);
         tp2.SetActive(true);
-        canTP = true;
     }
 }

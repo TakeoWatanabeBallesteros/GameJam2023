@@ -10,6 +10,8 @@ public class PowerUpScript : MonoBehaviour
     [SerializeField] PlayerItems playerItem;
 
     [SerializeField] private PlayerScript playerScript;
+
+    [SerializeField] private RootMovement root;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class PowerUpScript : MonoBehaviour
     }
     public void TP()
     {
+        playerScript.Tipi();
         GameObject.FindGameObjectWithTag("decision4").GetComponent<PowerUpController>().DestroyDesicion();
     }
     public void AyudaDeDemeter()
@@ -73,6 +76,7 @@ public class PowerUpScript : MonoBehaviour
     }
     public void Humilde()
     {
+        root.Rebajas();
         GameObject.FindGameObjectWithTag("decision1").GetComponent<PowerUpController>().DestroyDesicion();
     }
     public void BambasErizo()

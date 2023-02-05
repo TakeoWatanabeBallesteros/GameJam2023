@@ -11,7 +11,7 @@ public class AttackState : MonoBehaviour,State
             return GetComponent<FSM>();
         }
     }
-    deterioreTree tree;
+    RootMovement tree;
     float timer;
     [SerializeField] float timeToAttack;
     [SerializeField] float damageToTree;
@@ -19,7 +19,7 @@ public class AttackState : MonoBehaviour,State
 
     private void Awake()
     {
-        tree = GameObject.FindGameObjectWithTag("tree1").GetComponent<deterioreTree>();
+        tree = GameObject.FindGameObjectWithTag("tree1").GetComponent<RootMovement>();
         animator = GetComponent<Animator>();
     }
 
