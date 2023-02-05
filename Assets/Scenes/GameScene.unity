@@ -1427,7 +1427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318304578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 46.06, z: 0}
+  m_LocalPosition: {x: 0, y: 5.099, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4631,6 +4631,7 @@ GameObject:
   - component: {fileID: 1544378005}
   - component: {fileID: 1544378007}
   - component: {fileID: 1544378006}
+  - component: {fileID: 1544378008}
   m_Layer: 0
   m_Name: DarCosas
   m_TagString: Untagged
@@ -4670,10 +4671,11 @@ MonoBehaviour:
   pivotTransform: {fileID: 834445610}
   rootHeight: 5.1
   spriteRenderer: {fileID: 1738049350}
+  rootMinHeight: 0
   canvas: {fileID: 1576804875}
-  stage1: 0500000000000000000000000000000000000000
-  stage2: 0700000005000000000000000000000000000000
-  stage3: 0000000007000000050000000000000000000000
+  stage1: 0600000000000000000000000000000000000000
+  stage2: 0800000006000000000000000000000000000000
+  stage3: 0000000008000000060000000000000000000000
   stage4: 0000000000000000070000000500000000000000
   stage5: 0000000000000000000000000000000007000000
   sunText: {fileID: 854257562}
@@ -4709,6 +4711,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.6424215, y: 0.40408283}
   m_EdgeRadius: 0
+--- !u!114 &1544378008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544378004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032fb3b84ac5f3341b5f0de773da6579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deterioreTime: 1
 --- !u!1 &1550323183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6368,6 +6383,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GuantesDeJack
       objectReference: {fileID: 0}
+    - target: {fileID: 1280296613, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1280296615, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
@@ -6380,6 +6399,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Humilde
       objectReference: {fileID: 0}
+    - target: {fileID: 1454848734, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1454848736, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
@@ -6391,6 +6414,10 @@ PrefabInstance:
     - target: {fileID: 1454848736, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SinFondo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905681600, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1905681602, guid: fa65ade807ba85e4e8559948bf794e9e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
