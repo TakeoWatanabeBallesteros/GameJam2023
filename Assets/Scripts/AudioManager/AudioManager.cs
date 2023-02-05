@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("theme1"); 
+        // Play("theme1"); 
     }
 
     public void Play(string name)

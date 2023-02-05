@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MatTree
+  m_Name: MatTree 1
   m_Shader: {fileID: -6465566751694194690, guid: 25bed21ea12eba64aaece9ae75888486, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -37,7 +37,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: f76dbb872d938e8479bb330151867c7c, type: 3}
+        m_Texture: {fileID: 2800000, guid: fd4c754006720c643a973eec5d18ee3b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -57,8 +57,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scale: 0
-    - _clip: 1
-    - _grow: 0.079
+    - _clip: 0.97
+    - _grow: 1
     - _metalic: 0
     - _smooth: 0
     m_Colors:

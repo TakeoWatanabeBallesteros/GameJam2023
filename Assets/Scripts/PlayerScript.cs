@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class PlayerScript : MonoBehaviour
     public float moveSpeed;
     public float rotationSpeed;
     public Transform planetPivot;
-    public bool ground = true;
+    public bool onGround = true;
     public bool onRoot = false;
     public SpriteRenderer spr;
     public Animator anim;
+    public Transform cam;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +25,19 @@ public class PlayerScript : MonoBehaviour
     
     void FixedUpdate()
     {
-        if(ground)OnPlanetMovement();
-        if(onRoot) OnRootMovement();
-        spr.flipX = Input.GetAxisRaw("Horizontal") > 0;
+        cam.position = new Vector3(transform.position.x, transform.position.y, cam.position.z);
         
-        if(ground && Input.GetAxisRaw("Horizontal") == 0) anim.SetTrigger("Idle");
-        else if(ground && Input.GetAxisRaw("Horizontal") != 0) anim.SetTrigger("Walk");
-        else if(!ground && onRoot && rb.velocity == Vector2.zero) anim.SetTrigger("IdleClimb");
+        rb.velocity = Vector2.zero;
+        if(onGround)OnPlanetMovement();
+        if(onRoot || (!onRoot && !onGround)) OnRootMovement();
+        if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            spr.flipX = Input.GetAxisRaw("Horizontal") > 0;
+        }
+        
+        if((onGround || (!onGround && !onRoot)) && Input.GetAxisRaw("Horizontal") == 0) anim.SetTrigger("Idle");
+        else if((onGround || (!onGround && !onRoot)) && Input.GetAxisRaw("Horizontal") != 0) anim.SetTrigger("Walk");
+        else if(!onGround && onRoot && rb.velocity == Vector2.zero) anim.SetTrigger("IdleClimb");
         else if(onRoot && rb.velocity.y != 0) anim.SetTrigger("Climb");
     }
 
@@ -40,17 +48,19 @@ public class PlayerScript : MonoBehaviour
 
     private void OnRootMovement()
     {
-        rb.velocity = new Vector2(ground?0:Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed * Time.deltaTime;
+        rb.velocity = new Vector2(onGround?0:Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Planeta"))
         {
-            ground = true;
+            onGround = true;
             // Take the pivot from this planet and add it as a parent of the player
             // 1- Script in each planet that gives the pivot
             // 2- Set as parent
+            planetPivot = other.GetComponent<PlanetaBehaviour>().planetPivot;
+            other.GetComponent<PlanetaBehaviour>().UnblockLats();
             transform.parent = planetPivot;
             // When doing the planet script use it to enable or disable colliders on the root
             transform.up = -(planetPivot.position - transform.position);
@@ -70,7 +80,8 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.CompareTag("Planeta"))
         {
-            ground = false;
+            other.GetComponent<PlanetaBehaviour>().BlockLats();
+            onGround = false;
             transform.parent = null;
             // Lerp rotate player
             transform.rotation = Quaternion.identity;
