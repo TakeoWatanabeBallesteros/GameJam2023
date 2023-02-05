@@ -21,6 +21,8 @@ public class GetSun : MonoBehaviour
     [SerializeField] float dissapearTime;
     float timer = 0;
     [SerializeField] GameObject particleDissapear;
+    bool gettingItems = false;
+    GetCloseToGetitem getClose;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class GetSun : MonoBehaviour
         timer = Time.time + dissapearTime;
         player = GameObject.FindGameObjectWithTag("Player");
         playerItemsScript = player.GetComponent<PlayerItems>();
+        getClose = GetComponent<GetCloseToGetitem>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,17 @@ public class GetSun : MonoBehaviour
             Destroy(gameObject);
             Destroy(gameObject.transform.parent.gameObject);
             Instantiate(particleDissapear, transform.position, Quaternion.identity);
+        }
+        if (getClose.isInRange)
+        {
+            if (Input.GetAxisRaw("Horizontal") != 0)
+            {
+                gettingItems = false;
+            }
+            else
+            {
+                gettingItems = transform;
+            }
         }
     }
 

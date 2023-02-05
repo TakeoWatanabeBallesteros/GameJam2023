@@ -24,24 +24,38 @@ public class GetTierra : MonoBehaviour
 
     int totalHits;
     int hits;
+    bool gettingItems = false;
+    GetCloseToGetitem getClose;
 
     // Start is called before the first frame update
     void Start()
     {
         totalHits = Random.Range(minHits, maxHits);
         hits = 0;
+        getClose = GetComponent<GetCloseToGetitem>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        if (getClose.isInRange)
+        {
+            if (Input.GetAxisRaw("Horizontal") != 0)
+            {
+                gettingItems = false;
+            }                      
+            else
+            {
+                gettingItems = transform;
+            }
+        }       
     }
 
     public IEnumerator GetItemTierra()
     {
         for (int i = hits; i <= totalHits; i++)
         {
+            yield return new WaitUntil(() => gettingItems == true);
             int itemPerHit = Random.Range(minItemGetPerHit, maxItemGetPerHit);
             float timePerHit = Random.Range(minTimePerHit, maxTimePerHit);
 
@@ -56,6 +70,7 @@ public class GetTierra : MonoBehaviour
             hits++;
             totalHits = Random.Range(minHits, maxHits);
         }
+        gettingItems = false;
         hits = 0;
         StartCoroutine(regenerateItem());
     }

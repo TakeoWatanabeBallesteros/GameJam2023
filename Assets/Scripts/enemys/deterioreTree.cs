@@ -21,7 +21,6 @@ public class deterioreTree : MonoBehaviour
         {
             life -= damage;
             canDamage = false;
-            Debug.Log("dmg");
         }          
     }
 

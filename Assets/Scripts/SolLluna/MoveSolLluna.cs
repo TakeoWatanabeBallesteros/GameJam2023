@@ -87,7 +87,7 @@ public class MoveSolLluna : MonoBehaviour
     IEnumerator spawnSunInTime()
     {
         GameObject sun = Instantiate(sunItem, appearPos, Quaternion.Euler(0, 0, Random.Range(0f, 360f)));
-        GameObject sunParticle = Instantiate(sunParticlePrefab, sun.transform.GetChild(0).position, Quaternion.identity);
+        GameObject sunParticle = Instantiate(sunParticlePrefab, sun.transform.GetChild(0).position, sun.transform.rotation);
         sun.SetActive(false);
         yield return new WaitForSeconds(1f);
         sun.SetActive(true);

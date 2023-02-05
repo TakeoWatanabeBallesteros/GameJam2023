@@ -23,18 +23,31 @@ public class GetCaca : MonoBehaviour
 
     int totalHits;
     int hits;
+    bool gettingItems = false;
+    GetCloseToGetitem getClose;
 
     // Start is called before the first frame update
     void Start()
     {
         totalHits = Random.Range(minHits, maxHits);
         hits = 0;
+        getClose = GetComponent<GetCloseToGetitem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (getClose.isInRange)
+        {
+            if (Input.GetAxisRaw("Horizontal") != 0)
+            {
+                gettingItems = false;
+            }
+            else
+            {
+                gettingItems = transform;
+            }
+        }
     }
 
     public IEnumerator GetItemCaca()
