@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -58,6 +59,10 @@ public class PlayerScript : MonoBehaviour
         else if(other.CompareTag("Root"))
         {
             onRoot = true;
+        }
+        else if(other.CompareTag("GameEndTag"))
+        {
+            SceneManager.LoadScene("GameEndScene");
         }
     }
 
