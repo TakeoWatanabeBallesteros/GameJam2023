@@ -24,6 +24,8 @@ public class GetWater : MonoBehaviour
     [SerializeField] float regenerateTime;
     bool gettingItems = false;
     GetCloseToGetitem getClose;
+    [SerializeField] GameObject particlePrefab;
+    [SerializeField] GameObject particleDissapearPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -78,9 +80,15 @@ public class GetWater : MonoBehaviour
     {
         spriteRenderer.enabled = false;
         circleCollider.enabled = false;
+        GameObject particleDisapear = Instantiate(particleDissapearPrefab, transform.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        Destroy(particleDisapear);
         yield return new WaitForSeconds(regenerateTime);
         spriteRenderer.enabled = true;
         circleCollider.enabled = true;
+        GameObject particle = Instantiate(particlePrefab, transform.position, transform.rotation);
+        yield return new WaitForSeconds(1f);
+        Destroy(particle);
     }
     public void DoubleItem()
     {

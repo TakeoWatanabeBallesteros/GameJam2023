@@ -25,6 +25,8 @@ public class GetCaca : MonoBehaviour
     int hits;
     bool gettingItems = false;
     GetCloseToGetitem getClose;
+    [SerializeField] GameObject particlePrefab;
+    [SerializeField] GameObject particleDissapearPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -82,6 +84,7 @@ public class GetCaca : MonoBehaviour
         yield return new WaitForSeconds(regenerateTime);
         spriteRenderer.enabled = true;
         circleCollider.enabled = true;
+
     }
     public void DoubleItem()
     {
