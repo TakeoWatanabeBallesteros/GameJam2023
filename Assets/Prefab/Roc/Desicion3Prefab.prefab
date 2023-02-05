@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 4939690434374518260}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &332183681758166496
 PrefabInstance:
@@ -42,7 +42,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1101356655987371809, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1283044461489877645, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_margin.x
@@ -50,15 +50,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1283044461489877645, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_margin.z
-      value: 0
+      value: -0.65602875
       objectReference: {fileID: 0}
     - target: {fileID: 3193774012138499705, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3420452569765096709, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
+      propertyPath: m_margin.z
+      value: -0.65602875
       objectReference: {fileID: 0}
     - target: {fileID: 3926676016612082295, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4242339334704075746, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_margin.w
@@ -130,11 +134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5781311708437851185, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5852315580937756562, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8347216846520117465, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_Name
@@ -142,11 +146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606146461259090540, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 9141396663259685228, guid: 2ebc23aa206dae9459a2d9ca723a18fd, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

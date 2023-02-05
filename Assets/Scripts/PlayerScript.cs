@@ -49,6 +49,7 @@ public class PlayerScript : MonoBehaviour
 
         if (canTP && Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("sad");
             transform.position = tpPos;
         }
     }

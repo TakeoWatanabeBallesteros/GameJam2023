@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 8557383173578973883}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5452768450603675292
 PrefabInstance:
@@ -42,11 +42,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 261319220888163679, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 992117521233892266, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1057187956792581354, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
       propertyPath: m_Name
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3262857901503617026, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4426421247989255207, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
       propertyPath: m_RootOrder
@@ -118,15 +118,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5405160332299089476, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5849673634711214666, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840081315346581017, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
+      propertyPath: m_SortingOrder
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8229318608676592402, guid: 5eae38b910b4ba44195263f36320ac53, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
