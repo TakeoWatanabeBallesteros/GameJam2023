@@ -17,6 +17,8 @@ public class PlayerItems : MonoBehaviour
     [SerializeField] TextMeshProUGUI waterText;
     [SerializeField] TextMeshProUGUI tierraText;
 
+    public float limitItem;
+
     public void ChangeSunItems(int valor)
     {
         sunItems += valor;
@@ -49,6 +51,6 @@ public class PlayerItems : MonoBehaviour
     }
     public void SinLimite()
     {
-
+        limitItem = 9999999999999999;
     }
 }

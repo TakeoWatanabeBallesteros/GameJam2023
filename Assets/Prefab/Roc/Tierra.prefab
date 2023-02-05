@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInRange: 0
+  player: {fileID: 0}
 --- !u!114 &5154804642544643062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +142,5 @@ MonoBehaviour:
   textPrefab: {fileID: 1223270936859354633, guid: bc8cee236e0918145bb5e70b3a5e7689, type: 3}
   spriteRenderer: {fileID: 7611577100972038931}
   circleCollider: {fileID: 7611577100972038934}
+  particlePrefab: {fileID: 3573069554868177005, guid: a793fd67ddedba142b1f10bd75524ab8, type: 3}
+  particleDissapearPrefab: {fileID: 6186007418976336844, guid: 8f4a3beb9c53fe242804de55d5ae6b15, type: 3}

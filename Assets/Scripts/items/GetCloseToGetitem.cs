@@ -10,6 +10,7 @@ public class GetCloseToGetitem : MonoBehaviour
     IEnumerator sunCoroutine;
     IEnumerator tierraCoroutine;
     public bool isInRange = false;
+    [SerializeField] PlayerItems player;
     // Start is called before the first frame update
     void Start()
     {

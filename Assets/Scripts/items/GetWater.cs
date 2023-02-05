@@ -24,6 +24,8 @@ public class GetWater : MonoBehaviour
     [SerializeField] float regenerateTime;
     bool gettingItems = false;
     GetCloseToGetitem getClose;
+    [SerializeField] GameObject particlePrefab;
+    [SerializeField] GameObject particleDissapearPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -52,32 +54,41 @@ public class GetWater : MonoBehaviour
 
     public IEnumerator GetItemWater()
     {
-        for (int i = hits; i <= totalHits; i++)
+        if (player.GetComponent<PlayerItems>().waterItems < player.GetComponent<PlayerItems>().limitItem)
         {
-            int itemPerHit = Random.Range(minItemGetPerHit, maxItemGetPerHit);
-            float timePerHit = Random.Range(minTimePerHit, maxTimePerHit);
+            for (int i = hits; i <= totalHits; i++)
+            {
+                int itemPerHit = Random.Range(minItemGetPerHit, maxItemGetPerHit);
+                float timePerHit = Random.Range(minTimePerHit, maxTimePerHit);
 
-            yield return new WaitForSeconds(timePerHit);
+                yield return new WaitForSeconds(timePerHit);
 
-            playerItemsScript.ChangeWaterItems(itemPerHit);
+                playerItemsScript.ChangeWaterItems(itemPerHit);
 
-            GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
-            popUpText.GetComponentInChildren<TextMeshPro>().text = "+" + itemPerHit.ToString();
+                GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+                popUpText.GetComponentInChildren<TextMeshPro>().text = "+" + itemPerHit.ToString();
 
-            Instantiate(itemPrefab, transform.position, Quaternion.identity);
-            hits++;
-            totalHits = Random.Range(minHits, maxHits);
-        }
-        hits = 0;
-        StartCoroutine(regenerateItem());
+                Instantiate(itemPrefab, transform.position, Quaternion.identity);
+                hits++;
+                totalHits = Random.Range(minHits, maxHits);
+            }
+            hits = 0;
+            StartCoroutine(regenerateItem());
+        }           
     }
     IEnumerator regenerateItem()
     {
         spriteRenderer.enabled = false;
         circleCollider.enabled = false;
+        GameObject particleDisapear = Instantiate(particleDissapearPrefab, transform.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        Destroy(particleDisapear);
         yield return new WaitForSeconds(regenerateTime);
         spriteRenderer.enabled = true;
         circleCollider.enabled = true;
+        GameObject particle = Instantiate(particlePrefab, transform.position, transform.rotation);
+        yield return new WaitForSeconds(1f);
+        Destroy(particle);
     }
     public void DoubleItem()
     {

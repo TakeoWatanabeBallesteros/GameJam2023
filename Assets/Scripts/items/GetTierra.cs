@@ -26,6 +26,8 @@ public class GetTierra : MonoBehaviour
     int hits;
     bool gettingItems = false;
     GetCloseToGetitem getClose;
+    [SerializeField] GameObject particlePrefab;
+    [SerializeField] GameObject particleDissapearPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -53,34 +55,44 @@ public class GetTierra : MonoBehaviour
 
     public IEnumerator GetItemTierra()
     {
-        for (int i = hits; i <= totalHits; i++)
+        if (player.GetComponent<PlayerItems>().tierraItems < player.GetComponent<PlayerItems>().limitItem)
         {
-            yield return new WaitUntil(() => gettingItems == true);
-            int itemPerHit = Random.Range(minItemGetPerHit, maxItemGetPerHit);
-            float timePerHit = Random.Range(minTimePerHit, maxTimePerHit);
+            for (int i = hits; i <= totalHits; i++)
+            {
+                yield return new WaitUntil(() => gettingItems == true);
+                int itemPerHit = Random.Range(minItemGetPerHit, maxItemGetPerHit);
+                float timePerHit = Random.Range(minTimePerHit, maxTimePerHit);
 
-            yield return new WaitForSeconds(timePerHit);
+                yield return new WaitForSeconds(timePerHit);
 
-            playerItemsScript.ChangeTierraItems(itemPerHit);
+                playerItemsScript.ChangeTierraItems(itemPerHit);
 
-            GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
-            popUpText.GetComponentInChildren<TextMeshPro>().text = "+" + itemPerHit.ToString();
+                GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+                popUpText.GetComponentInChildren<TextMeshPro>().text = "+" + itemPerHit.ToString();
 
-            Instantiate(itemPrefab, transform.position, Quaternion.identity);
-            hits++;
-            totalHits = Random.Range(minHits, maxHits);
+                Instantiate(itemPrefab, transform.position, Quaternion.identity);
+                hits++;
+                totalHits = Random.Range(minHits, maxHits);
+            }
+            gettingItems = false;
+            hits = 0;
+            StartCoroutine(regenerateItem());
         }
-        gettingItems = false;
-        hits = 0;
-        StartCoroutine(regenerateItem());
+            
     }
     IEnumerator regenerateItem()
     {
         spriteRenderer.enabled = false;
         circleCollider.enabled = false;
+        GameObject particleDisapear = Instantiate(particleDissapearPrefab, transform.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        Destroy(particleDisapear);
         yield return new WaitForSeconds(regenerateTime);
         spriteRenderer.enabled = true;
         circleCollider.enabled = true;
+        GameObject particle = Instantiate(particlePrefab, transform.position,transform.rotation);
+        yield return new WaitForSeconds(1f);
+        Destroy(particle);
     }
     public void DoubleItem()
     {

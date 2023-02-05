@@ -128,6 +128,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7558669952514566299}
   circleCollider: {fileID: 7558669952514566278}
   regenerateTime: 5
+  particlePrefab: {fileID: 3489022994844175814, guid: 669217ce7f8a24642b28db0b86b00ff9, type: 3}
+  particleDissapearPrefab: {fileID: 6289617808944946667, guid: 29ef5db001876644a876435a231fbdbd, type: 3}
 --- !u!114 &7558669952514566279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +143,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInRange: 0
+  player: {fileID: 0}

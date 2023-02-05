@@ -7554,7 +7554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028311515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.24569999, y: 3.165, z: -32}
+  m_LocalPosition: {x: -6.45, y: 9.6, z: -32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7983,11 +7983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582128522365064012, guid: 1208e704d9e3a7448a50050477291866, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0143
+      value: -6.7099996
       objectReference: {fileID: 0}
     - target: {fileID: 582128522365064012, guid: 1208e704d9e3a7448a50050477291866, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.205
+      value: 8.64
       objectReference: {fileID: 0}
     - target: {fileID: 582128522365064012, guid: 1208e704d9e3a7448a50050477291866, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8041,6 +8041,10 @@ PrefabInstance:
       propertyPath: windText
       value: 
       objectReference: {fileID: 1805171246}
+    - target: {fileID: 7400233417671887624, guid: 1208e704d9e3a7448a50050477291866, type: 3}
+      propertyPath: limitItem
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7400233417671887624, guid: 1208e704d9e3a7448a50050477291866, type: 3}
       propertyPath: waterText
       value: 
