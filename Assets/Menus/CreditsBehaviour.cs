@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class CreditsBehaviour : MonoBehaviour
 {
+
+    public void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("musica2");
+    }
     public void GoBack()
     {
         SceneManager.LoadScene("Menu");

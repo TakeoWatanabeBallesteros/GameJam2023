@@ -21,10 +21,12 @@ public class PlayerEvents : MonoBehaviour
     public void Patitas()
     {
         // Play audio here
+        FindObjectOfType<AudioManager>().Play("rock");
     }
 
     public void Cogeme()
     {
         // Play audio here
+        FindObjectOfType<AudioManager>().Play("escalar");
     }
 }
