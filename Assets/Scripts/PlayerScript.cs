@@ -17,6 +17,13 @@ public class PlayerScript : MonoBehaviour
     public Animator anim;
     public Transform cam;
 
+    public bool canTP;
+
+    public Vector3 tpPos;
+
+    public GameObject tp1;
+    public GameObject tp2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +46,11 @@ public class PlayerScript : MonoBehaviour
         else if((onGround || (!onGround && !onRoot)) && Input.GetAxisRaw("Horizontal") != 0) anim.SetTrigger("Walk");
         else if(!onGround && onRoot && rb.velocity == Vector2.zero) anim.SetTrigger("IdleClimb");
         else if(onRoot && rb.velocity.y != 0) anim.SetTrigger("Climb");
+
+        if (canTP && Input.GetKey(KeyCode.E))
+        {
+            
+        }
     }
 
     private void OnPlanetMovement()
@@ -101,5 +113,12 @@ public class PlayerScript : MonoBehaviour
     public void Guantes()
     {
         rotationSpeed *= 2;
+    }
+
+    public void Tipi()
+    {
+        tp1.SetActive(true);
+        tp2.SetActive(true);
+        canTP = true;
     }
 }

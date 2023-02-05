@@ -12,7 +12,7 @@ public class RootMovement : MonoBehaviour
     [Range(5.1f, 48.8f)] public float rootHeight;
     public SpriteRenderer spriteRenderer;
 
-    private float  rootMinHeight;
+    public float  rootMinHeight;
 
     public GameObject canvas;
     
@@ -35,11 +35,15 @@ public class RootMovement : MonoBehaviour
     private float[] stp = new float[5];
 
 
-    public float minMin = 2f;
+    private float minMin = 5.1f;
     private float maxMax = 48.8f;
 
     private float diff;
     
+    
+    bool canDamage = true;
+
+    private float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,11 +62,29 @@ public class RootMovement : MonoBehaviour
     {
         pivotTransform.position = new Vector3(0, rootHeight, 0);
         spriteRenderer.material.SetFloat("_grow", Mathf.Lerp(spriteRenderer.material.GetFloat("_grow"), Scale(minMin, maxMax, rootHeight), Time.deltaTime));
+        if (!canDamage)
+        {
+            timer += Time.deltaTime;
+            if(timer > 1)
+            {
+                canDamage = true;
+                timer = 0;
+            }
+        }
     }
     
     private static float Scale(float min, float max, float value)
     {
         return Mathf.Clamp(1 / (max - min) * (value - max) + 1, 0, 1);
+    }
+    
+    public void DamageTree(float damage)
+    {
+        if (canDamage)
+        {
+            rootHeight -= damage;
+            canDamage = false;
+        }          
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -102,7 +124,7 @@ public class RootMovement : MonoBehaviour
                    stage1[4] = Math.Max(stage1[4] -= items.windItems,0);
                    plitms.ChangeWindItems(-s);
                }
-               tierraText.text = $"{stage1[0]} / 5";
+               tierraText.text = $"{stage1[0]} / 6";
                waterText.text = $"{stage1[1]} / 0";
                sunText.text = $"{stage1[2]} / 0";
                cacaText.text = $"{stage1[3]} / 0";
@@ -122,8 +144,8 @@ public class RootMovement : MonoBehaviour
                stage++;
                rootMinHeight = rootMaxHeight;
                rootMaxHeight = stp[stage - 1];
-               tierraText.text = $"{stage2[0]} / 7";
-               waterText.text = $"{stage2[1]} / 5";
+               tierraText.text = $"{stage2[0]} / 8";
+               waterText.text = $"{stage2[1]} / 6";
                sunText.text = $"{stage2[2]} / 0";
                cacaText.text = $"{stage2[3]} / 0";
                windText.text = $"{stage2[4]} / 0";
@@ -159,8 +181,8 @@ public class RootMovement : MonoBehaviour
                    stage2[4] = Math.Max(stage2[4] -= items.windItems,0);
                    plitms.ChangeWindItems(-s);
                }
-               tierraText.text = $"{stage2[0]} / 7";
-               waterText.text = $"{stage2[1]} / 5";
+               tierraText.text = $"{stage2[0]} / 8";
+               waterText.text = $"{stage2[1]} / 6";
                sunText.text = $"{stage2[2]} / 0";
                cacaText.text = $"{stage2[3]} / 0";
                windText.text = $"{stage2[4]} / 0";
@@ -170,14 +192,14 @@ public class RootMovement : MonoBehaviour
                    a -= ap;
                }
 
-               rootHeight = a * 10 / 12;
+               rootHeight = (a * 10 / 12) + rootMinHeight;
                foreach (int ap in stage2)
                {
                    if(ap > 0) return;
                }
                tierraText.text = $"{stage3[0]} / 0";
-               waterText.text = $"{stage3[1]} / 7";
-               sunText.text = $"{stage3[2]} / 5";
+               waterText.text = $"{stage3[1]} / 8";
+               sunText.text = $"{stage3[2]} / 6";
                cacaText.text = $"{stage3[3]} / 0";
                windText.text = $"{stage3[4]} / 0";
                stage++;
@@ -216,8 +238,8 @@ public class RootMovement : MonoBehaviour
                    plitms.ChangeWindItems(-s);
                }
                tierraText.text = $"{stage3[0]} / 0";
-               waterText.text = $"{stage3[1]} / 7";
-               sunText.text = $"{stage3[2]} / 5";
+               waterText.text = $"{stage3[1]} / 8";
+               sunText.text = $"{stage3[2]} / 6";
                cacaText.text = $"{stage3[3]} / 0";
                windText.text = $"{stage3[4]} / 0";
                a = 12;
@@ -226,7 +248,7 @@ public class RootMovement : MonoBehaviour
                    a -= ap;
                }
 
-               rootHeight = a * 10 / 12;
+               rootHeight = (a * 10 / 12)+ rootMinHeight;
                foreach (int ap in stage3)
                {
                    if(ap > 0) return;
@@ -236,8 +258,8 @@ public class RootMovement : MonoBehaviour
                rootMaxHeight = stp[stage - 1];
                tierraText.text = $"{stage4[0]} / 0";
                waterText.text = $"{stage4[1]} / 0";
-               sunText.text = $"{stage4[2]} / 7";
-               cacaText.text = $"{stage4[3]} / 5";
+               sunText.text = $"{stage4[2]} / 8";
+               cacaText.text = $"{stage4[3]} / 6";
                windText.text = $"{stage4[4]} / 0";
                break;
            case 4:
@@ -273,8 +295,8 @@ public class RootMovement : MonoBehaviour
                }
                tierraText.text = $"{stage4[0]} / 0";
                waterText.text = $"{stage4[1]} / 0";
-               sunText.text = $"{stage4[2]} / 7";
-               cacaText.text = $"{stage4[3]} / 5";
+               sunText.text = $"{stage4[2]} / 8";
+               cacaText.text = $"{stage4[3]} / 6";
                windText.text = $"{stage4[4]} / 0";
                a = 12;
                foreach (int ap in stage4)
@@ -282,7 +304,7 @@ public class RootMovement : MonoBehaviour
                    a -= ap;
                }
 
-               rootHeight = a * 10 / 12;
+               rootHeight = (a * 10 / 12) + rootMinHeight;
                foreach (int ap in stage4)
                {
                    if(ap > 0) return;
@@ -294,7 +316,7 @@ public class RootMovement : MonoBehaviour
                waterText.text = $"{stage5[1]} / 0";
                sunText.text = $"{stage5[2]} / 0";
                cacaText.text = $"{stage5[3]} / 0";
-               windText.text = $"{stage5[4]} / 7";
+               windText.text = $"{stage5[4]} / 8";
                break;
            case 5:
                if (stage5[0] > 0)
@@ -331,14 +353,14 @@ public class RootMovement : MonoBehaviour
                waterText.text = $"{stage5[1]} / 0";
                sunText.text = $"{stage5[2]} / 0";
                cacaText.text = $"{stage5[3]} / 0";
-               windText.text = $"{stage5[4]} / 7";
+               windText.text = $"{stage5[4]} / 8";
                a = 7;
                foreach (int ap in stage2)
                {
                    a -= ap;
                }
 
-               rootHeight = a * 10 / 7;
+               rootHeight = (a * 10 / 7)+ rootMinHeight;
                foreach (int ap in stage5)
                {
                    if(ap > 0) return;
