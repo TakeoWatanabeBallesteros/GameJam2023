@@ -19,7 +19,7 @@ public class RootMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pivotTransform.position = new Vector3(0, rootHeight + 2, 0);
+        pivotTransform.position = new Vector3(0, rootHeight + 1, 0);
         spriteRenderer.material.SetFloat("_grow", Scale(2, rootMaxHeight, rootHeight));
     }
     
