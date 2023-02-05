@@ -458,34 +458,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 665285378, guid: ad0c46788f346e6408aac1713634afd1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848703572, guid: ad0c46788f346e6408aac1713634afd1, type: 3}
-      propertyPath: m_Size.x
-      value: 1.0682526
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848703572, guid: ad0c46788f346e6408aac1713634afd1, type: 3}
-      propertyPath: m_Size.y
-      value: 26.529526
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848703572, guid: ad0c46788f346e6408aac1713634afd1, type: 3}
-      propertyPath: m_Offset.x
-      value: 1.9299998
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848703572, guid: ad0c46788f346e6408aac1713634afd1, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.3787875
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848703573, guid: ad0c46788f346e6408aac1713634afd1, type: 3}
-      propertyPath: m_Size.y
-      value: 26.529526
-      objectReference: {fileID: 0}
-    - target: {fileID: 1848703573, guid: ad0c46788f346e6408aac1713634afd1, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.3787875
-      objectReference: {fileID: 0}
     - target: {fileID: 6945502033418386817, guid: ad0c46788f346e6408aac1713634afd1, type: 3}
       propertyPath: m_Name
       value: Raiz

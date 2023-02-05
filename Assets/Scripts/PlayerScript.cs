@@ -86,4 +86,9 @@ public class PlayerScript : MonoBehaviour
     {
         moveSpeed *= 2;
     }
+
+    public void Guantes()
+    {
+        rotationSpeed *= 2;
+    }
 }
