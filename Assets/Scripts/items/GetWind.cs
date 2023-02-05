@@ -51,24 +51,27 @@ public class GetWind : MonoBehaviour
 
     public IEnumerator GetItemWind()
     {
-        for (int i = hits; i <= totalHits; i++)
+        if (player.GetComponent<PlayerItems>().windItems < player.GetComponent<PlayerItems>().limitItem)
         {
-            int itemPerHit = Random.Range(minItemGetPerHit, maxItemGetPerHit);
-            float timePerHit = Random.Range(minTimePerHit, maxTimePerHit);
+            for (int i = hits; i <= totalHits; i++)
+            {
+                int itemPerHit = Random.Range(minItemGetPerHit, maxItemGetPerHit);
+                float timePerHit = Random.Range(minTimePerHit, maxTimePerHit);
 
-            yield return new WaitForSeconds(timePerHit);
+                yield return new WaitForSeconds(timePerHit);
 
-            playerItemsScript.ChangeWindItems(itemPerHit);
+                playerItemsScript.ChangeWindItems(itemPerHit);
 
-            GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
-            popUpText.GetComponentInChildren<TextMeshPro>().text = "+" + itemPerHit.ToString();
+                GameObject popUpText = Instantiate(textPrefab, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+                popUpText.GetComponentInChildren<TextMeshPro>().text = "+" + itemPerHit.ToString();
 
-            Instantiate(itemPrefab, transform.position, Quaternion.identity);
-            hits++;
-            totalHits = Random.Range(minHits, maxHits);
-        }
-        hits = 0;
-        StartCoroutine(regenerateItem());
+                Instantiate(itemPrefab, transform.position, Quaternion.identity);
+                hits++;
+                totalHits = Random.Range(minHits, maxHits);
+            }
+            hits = 0;
+            StartCoroutine(regenerateItem());
+        }         
     }
     IEnumerator regenerateItem()
     {
